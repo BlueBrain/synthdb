@@ -16,7 +16,7 @@ pip install  synthdb
 
 For some operations (e.g. create, update or delete operations), this package should be installed in editable mode:
 ```bash
-git clone https://bbpgitlab.epfl.ch/neuromath/synthdb.git
+git clone https://github.com/BlueBrain/synthdb.git
 cd synthdb
 pip install  -e .
 ```
@@ -41,8 +41,8 @@ Here is an example of a variety of commands
 mkvirtualenv demo_synthdb
 mkdir /tmp/synthdb_demo
 cd /tmp/synthdb_demo
-git clone https://bbpgitlab.epfl.ch/neuromath/synthdb.git
-pip install --index-url https://bbpteam.epfl.ch/repository/devpi/simple -e ./synthdb
+git clone https://github.com/BlueBrain/synthdb.git
+pip install -e ./synthdb
 ```
 
 ### Show usage
@@ -61,7 +61,7 @@ synthdb morphology-release list
 
 #### Create a new morphology release
 ```bash
-synthdb morphology-release create a_new_rat_release --gpfs-path /gpfs/bbp.cscs.ch/project/proj81/scratch/mmb_morphology_releases/rat_release
+synthdb morphology-release create a_new_rat_release --gpfs-path rat_release
 ```
 
 #### Check the new entry
@@ -138,7 +138,6 @@ synthdb synthesis-inputs rebuild --brain-region sscx --mtype L6_TPC:A --luigi-co
 
 The development of this software was supported by funding to the Blue Brain Project,
 a research center of the École polytechnique fédérale de Lausanne (EPFL),
-from the Swiss government's ETH Board of the Swiss Federal Institutes of Technology
-and from the Human Brain Project's Specific Grant Agreement 3.
+from the Swiss government's ETH Board of the Swiss Federal Institutes of Technology.
 
 Copyright (c) 2022-2024 Blue Brain Project/EPFL
