@@ -11,14 +11,14 @@ and are usually meant to be used by the ``region-grower`` package.
 Use pip to install this package:
 
 ```bash
-pip install --index-url https://bbpteam.epfl.ch/repository/devpi/simple synthdb
+pip install  synthdb
 ```
 
 For some operations (e.g. create, update or delete operations), this package should be installed in editable mode:
 ```bash
 git clone https://bbpgitlab.epfl.ch/neuromath/synthdb.git
 cd synthdb
-pip install --index-url https://bbpteam.epfl.ch/repository/devpi/simple -e .
+pip install  -e .
 ```
 
 ## Usage
@@ -133,3 +133,12 @@ synthdb synthesis-inputs remove new_region L6_TPC:A luigi_sscx
 ```bash
 synthdb synthesis-inputs rebuild --brain-region sscx --mtype L6_TPC:A --luigi-config luigi_sscx
 ```
+
+## Funding & Acknowledgment
+
+The development of this software was supported by funding to the Blue Brain Project,
+a research center of the École polytechnique fédérale de Lausanne (EPFL),
+from the Swiss government's ETH Board of the Swiss Federal Institutes of Technology
+and from the Human Brain Project's Specific Grant Agreement 3.
+
+Copyright (c) 2022-2024 Blue Brain Project/EPFL
