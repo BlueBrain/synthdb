@@ -1,7 +1,7 @@
 # Contributing
 
-We would love for you to contribute to this package and help make it even better
-than it is today! As a contributor, here are the guidelines we would like you to follow:
+We would love for you to contribute to this package and help make it even better than it is today!
+As a contributor, here are the guidelines we would like you to follow:
 * [Issues and Bugs](#issue)
 * [Feature Requests](#feature)
 * [Submission Guidelines](#submit)
@@ -9,13 +9,13 @@ than it is today! As a contributor, here are the guidelines we would like you to
 ## <a name="issue"></a> Got a question or found a bug?
 
 If you have a question or find a bug in the source code, you can help us by
-[submitting an issue](#submit-issue) to our [Gitlab Repository][repo_url]. Even better, you can
+[submitting an issue](#submit-issue) to our [GitHub Repository][github]. Even better, you can
 [submit a Pull Request](#submit-pr) with a fix.
 
 ## <a name="feature"></a> Missing a Feature?
 
 You can *request* a new feature by [submitting an issue](#submit-issue) to our
-[Gitlab Repository][repo_url]. If you would like to *implement* a new feature, please submit an
+[GitHub Repository][github]. If you would like to *implement* a new feature, please submit an
 issue with a proposal for your work first, to be sure that we can use it. Then
 [submit a Pull Request](#submit-pr) that points to this issue.
 
@@ -49,7 +49,19 @@ When you wish to contribute to the code base, please consider the following guid
 
 * Create your patch, **including appropriate test cases** (please note that the coverage must
   always be equal to 100%).
-* Run the full test suite, and ensure that all tests pass.
+* Run the full test suite, and ensure that all tests pass (at least with one of the required
+  python interpreters):
+
+  ```shell
+  tox
+  ```
+
+  or
+
+  ```shell
+  tox run -e py39,lint,docs,check-packaging
+  ```
+
 * Commit your changes using a descriptive commit message.
 
   ```shell
@@ -58,18 +70,19 @@ When you wish to contribute to the code base, please consider the following guid
 
   Note: the optional commit `-a` command line option will automatically **add** and **rm** edited
   files.
-* Push your branch to Gitlab:
+* Push your branch to GitHub:
 
   ```shell
-  git push origin my-fix-branch
+  git push --set-upstream origin my-fix-branch
   ```
 
-* In Gitlab, send a Pull Request to the `main` branch of the upstream repository of the relevant
+* In GitHub, send a Pull Request to the `main` branch of the upstream repository of the relevant
   component.
 * If we suggest changes then:
   * Make the required updates.
   * Re-run the test suites to ensure tests are still passing.
-  * Rebase your branch and force push to your Gitlab repository (this will update your Pull Request):
+  * Rebase your branch and force push to your GitHub repository (this will update your Pull
+    Request):
 
     ```shell
     git rebase main -i
@@ -82,7 +95,7 @@ That's it! Thank you for your contribution!
 
 After your pull request is merged, you can safely delete your branch and pull the changes from the
 main (upstream) repository:
-* Delete the remote branch on Gitlab either through the Gitlab web UI or your local shell as follows:
+* Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
 
   ```shell
   git push origin --delete my-fix-branch
@@ -124,22 +137,34 @@ The release process is the following:
   git checkout -b release_X.Y.Z
   ```
 
-* Update and push the CHANGELOG file using auto-changelog:
+* Update the CHANGELOG file using auto-changelog (see https://www.npmjs.com/package/auto-changelog):
 
   ```shell
   auto-changelog -v X.Y.Z
+  ```
+
+* Commit and push the new changelog:
+
+  ```shell
   git commit -m "Release X.Y.Z"
-  git push origin
+  git push --set-upstream origin release_X.Y.Z
   ```
 
 * Open a new pull request from this branch and merge it.
+* Create a new release on GitHub.
 * Checkout the main branch and update it:
 
   ```shell
   git checkout main
-  git pull --tags
+  git pull
+  ```
+
+* Remove your local branch:
+
+  ```shell
+  git branch -D release_X.Y.Z
   ```
 
 After these steps the CI should automatically build the wheel and push it to pypi.
 
-[repo_url]: https://bbpgitlab.epfl.ch/neuromath/synthdb
+[github]: https://github.com/BlueBrain/synthdb

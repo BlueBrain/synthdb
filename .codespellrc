@@ -1,3 +1,2 @@
 [codespell]
-skip = .git/*,*.tsv
-ignore-regex = @groupes.epfl.ch
+skip = .git/*,*.pdf
