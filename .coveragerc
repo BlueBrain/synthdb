@@ -1,0 +1,6 @@
+[paths]
+source_paths =
+	synthdb
+	*/site-packages/synthdb
+	*/synthdb/synthdb
+	*/synthdb/synthdb
