@@ -42,17 +42,15 @@ test_reqs = [
 
 setup(
     name="synthdb",
-    author="bbp-ou-cells",
-    author_email="bbp-ou-cells@groupes.epfl.ch",
+    author="Blue Brain Project, EPFL",
     description="Small database to host synthesis-related files and integrated tools.",
     long_description=Path("README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
-    url="https://bbpteam.epfl.ch/documentation/projects/synthdb",
     project_urls={
-        "Tracker": "https://bbpteam.epfl.ch/project/issues/projects/CELLS/issues",
-        "Source": "https://bbpgitlab.epfl.ch/neuromath/synthdb",
+        "Tracker": "https://github.com/BlueBrain/synthdb/issues",
+        "Source": "https://github.com/BlueBrain/synthdb",
     },
-    license="BBP-internal-confidential",
+    license="Apache License 2.0",
     packages=find_namespace_packages(include=["synthdb*"], exclude=["synthdb.alembic*"]),
     python_requires=">=3.9",
     version=VERSION,
