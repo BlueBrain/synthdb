@@ -15,7 +15,7 @@ spec.loader.exec_module(module)
 VERSION = module.VERSION
 
 reqs = [
-    "click>=7.0",
+    "click>=8.0",
     "luigi>=3.2",
     "luigi-tools>=0.2.1",
     "neurots>=3.6.0,<4",
