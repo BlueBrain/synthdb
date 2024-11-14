@@ -20,7 +20,7 @@ reqs = [
     "luigi-tools>=0.0.19",
     "neurots>=3.5.0,<4",
     "sqlalchemy>=1.4.24",
-    "synthesis-workflow>=0.1.1",
+    "synthesis-workflow>=1.2.1",
 ]
 
 doc_reqs = [

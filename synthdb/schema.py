@@ -33,6 +33,9 @@ class SynthesisInputsTable(Base):
 
     __tablename__ = "synthesis_inputs"
 
+    species = Column(String, nullable=False, primary_key=True)
+    """The species."""
+
     brain_region = Column(String, nullable=False, primary_key=True)
     """The brain region."""
 
@@ -51,7 +54,8 @@ class SynthesisInputsTable(Base):
     def __str__(self):
         """Return the string representation of the instance."""
         return (
-            f"SynthesisInputs: (brain_region={self.brain_region} ; mtype={self.mtype} ; "
+            f"SynthesisInputs: (species={self.species} ; brain_region={self.brain_region} ; "
+            f"mtype={self.mtype} ; "
             f"luigi_config={self.luigi_config}): distributions_path={self.distributions_path}, "
             f"parameters_path={self.parameters_path}"
         )
@@ -60,7 +64,8 @@ class SynthesisInputsTable(Base):
         """Equal operator."""
         try:
             return (
-                self.brain_region == other.brain_region
+                self.species == other.species
+                and self.brain_region == other.brain_region
                 and self.mtype == other.mtype
                 and self.luigi_config == other.luigi_config
                 and self.distributions_path == other.distributions_path
@@ -73,12 +78,14 @@ class SynthesisInputsTable(Base):
         """Less than operator."""
         try:
             return (
+                self.species,
                 self.brain_region,
                 self.mtype,
                 self.luigi_config,
                 self.distributions_path,
                 self.parameters_path,
             ) < (
+                other.species,
                 other.brain_region,
                 other.mtype,
                 other.luigi_config,
