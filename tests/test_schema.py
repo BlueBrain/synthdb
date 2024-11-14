@@ -11,6 +11,7 @@ class TestInputs:
     def test_str_cast(self):
         """Test string representation of ORM object."""
         obj = synthdb.schema.SynthesisInputsTable(
+            species="species",
             brain_region="brain_region",
             mtype="mtype",
             luigi_config="luigi_config",
@@ -19,7 +20,7 @@ class TestInputs:
         )
 
         assert str(obj) == (
-            "SynthesisInputs: (brain_region=brain_region ; mtype=mtype ; "
+            "SynthesisInputs: (species=species ; brain_region=brain_region ; mtype=mtype ; "
             "luigi_config=luigi_config): distributions_path=distributions_path, "
             "parameters_path=parameters_path"
         )
@@ -27,6 +28,7 @@ class TestInputs:
     def test_equal_operator(self):
         """Test string representation of ORM object."""
         obj_1 = synthdb.schema.SynthesisInputsTable(
+            species="species",
             brain_region="brain_region",
             mtype="mtype",
             luigi_config="luigi_config",
@@ -35,6 +37,7 @@ class TestInputs:
         )
 
         obj_2 = synthdb.schema.SynthesisInputsTable(
+            species="species",
             brain_region="brain_region",
             mtype="mtype",
             luigi_config="luigi_config",
@@ -49,6 +52,7 @@ class TestInputs:
     def test_lt_operator(self):
         """Test string representation of ORM object."""
         obj_1 = synthdb.schema.SynthesisInputsTable(
+            species='species',
             brain_region="brain_region",
             mtype="mtype",
             luigi_config="luigi_config",
@@ -57,6 +61,7 @@ class TestInputs:
         )
 
         obj_2 = synthdb.schema.SynthesisInputsTable(
+            species='species',
             brain_region="zzzzzzzzz",
             mtype="mtype",
             luigi_config="luigi_config",
