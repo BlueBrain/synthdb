@@ -119,7 +119,8 @@ def test_check_json_files_not_empty(tmpdir):
 
 def test_select_input(internal_db_session, saved_db_session):
     """Test element selection."""
-    base_element = synthdb.input_tools.select_input("Isocortex", "L4_UPC", "luigi_Isocortex")
+    base_element = synthdb.input_tools.select_input("rat", "Isocortex", "L4_UPC", "luigi_Isocortex")
+    assert base_element.species == "Isocortex"
     assert base_element.brain_region == "Isocortex"
     assert base_element.mtype == "L4_UPC"
     assert base_element.luigi_config == "luigi_Isocortex"
