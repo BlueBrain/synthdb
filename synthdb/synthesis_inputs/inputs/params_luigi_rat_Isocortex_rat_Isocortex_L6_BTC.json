@@ -1,0 +1,93 @@
+{
+    "Isocortex": {
+        "L6_BTC": {
+            "apical_dendrite": {},
+            "axon": {
+                "bias": 1.0,
+                "bias_length": 0.7,
+                "branching_method": "bio_oriented",
+                "growth_method": "tmd_gradient",
+                "metric": "path_distances",
+                "modify": null,
+                "orientation": {
+                    "mode": "normal_pia_constraint",
+                    "values": {
+                        "direction": {
+                            "mean": 3.1415,
+                            "std": 0.2
+                        }
+                    }
+                },
+                "randomness": 0.2,
+                "step_size": {
+                    "norm": {
+                        "mean": 1.0,
+                        "std": 0.0
+                    }
+                },
+                "targeting": 0.2,
+                "tree_type": 2
+            },
+            "basal_dendrite": {
+                "branching_method": "bio_oriented",
+                "growth_method": "tmd",
+                "metric": "path_distances",
+                "modify": null,
+                "orientation": {
+                    "mode": "pia_constraint",
+                    "values": {
+                        "form": "double_step",
+                        "params": [
+                            2.467614613747262,
+                            0.10000000000000002,
+                            -0.3828648591791712,
+                            0.10000002103611225
+                        ]
+                    }
+                },
+                "randomness": 0.24,
+                "step_size": {
+                    "norm": {
+                        "mean": 1.0,
+                        "std": 0.0
+                    }
+                },
+                "targeting": 0.14,
+                "tree_type": 3
+            },
+            "context_constraints": {
+                "apical_dendrite": {
+                    "hard_limit_max": {
+                        "fraction": 0.99,
+                        "layer": 1
+                    }
+                },
+                "basal_dendrite": {
+                    "hard_limit_max": {
+                        "fraction": 0.99,
+                        "layer": 1
+                    }
+                }
+            },
+            "diameter_params": {
+                "method": "default",
+                "models": [
+                    "simpler"
+                ],
+                "neurite_types": [
+                    "basal_dendrite",
+                    "axon"
+                ]
+            },
+            "grow_types": [
+                "basal_dendrite",
+                "axon"
+            ],
+            "origin": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    }
+}
