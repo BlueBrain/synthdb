@@ -208,7 +208,7 @@ def create_default_input(species, brain_region, mtype, luigi_config, log_level=N
     ):  # pragma: no cover
         raise RuntimeError(
             "Could not create default input for "
-            f"(species={species}, brain_region={brain_region},"
+            f"(species={species}, brain_region={brain_region}, "
             f"mtype={mtype}, luigi_config={luigi_config})"
         )
 
@@ -499,7 +499,7 @@ def pull_inputs(
 
     if not inputs:
         raise ValueError(
-            f"Could not retrieve any input for species={species} ;"
+            f"Could not retrieve any input for species={species} ; "
             f"brain_region={brain_region} ; mtype={mtype} ; "
             f"luigi_config={luigi_config}"
         )

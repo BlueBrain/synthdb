@@ -110,7 +110,7 @@ def mock_synthesis(monkeypatch):
             str(
                 synthdb.input_tools.SYNTHESIS_INPUTS
                 / "inputs"
-                / "distr_luigi_Isocortex_Isocortex_L6_UPC.json"
+                / "distr_luigi_rat_Isocortex_rat_Isocortex_L6_UPC.json"
             ),
             str(
                 synthdb.input_tools.TMP_OUT_DIR
@@ -128,7 +128,7 @@ def mock_synthesis(monkeypatch):
             str(
                 synthdb.input_tools.SYNTHESIS_INPUTS
                 / "inputs"
-                / "params_luigi_Isocortex_Isocortex_L6_UPC.json"
+                / "params_luigi_rat_Isocortex_rat_Isocortex_L6_UPC.json"
             ),
             str(
                 synthdb.input_tools.TMP_OUT_DIR

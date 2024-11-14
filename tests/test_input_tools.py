@@ -82,8 +82,8 @@ def test_input_file_path(file_name):
 
 def test_check_files_exist():
     """Test that existing files are checked properly."""
-    synthdb.input_tools.check_files_exist("params_luigi_Isocortex_Isocortex_L4_UPC.json")
-    synthdb.input_tools.check_files_exist("luigi_Isocortex", file_type="luigi_config")
+    synthdb.input_tools.check_files_exist("params_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json")
+    synthdb.input_tools.check_files_exist("luigi_rat_Isocortex", file_type="luigi_config")
 
     msg = (
         "The following files do not exist: "
@@ -119,13 +119,15 @@ def test_check_json_files_not_empty(tmpdir):
 
 def test_select_input(internal_db_session, saved_db_session):
     """Test element selection."""
-    base_element = synthdb.input_tools.select_input("rat", "Isocortex", "L4_UPC", "luigi_Isocortex")
-    assert base_element.species == "Isocortex"
+    base_element = synthdb.input_tools.select_input(
+        "rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex"
+    )
+    assert base_element.species == "rat"
     assert base_element.brain_region == "Isocortex"
     assert base_element.mtype == "L4_UPC"
-    assert base_element.luigi_config == "luigi_Isocortex"
+    assert base_element.luigi_config == "luigi_rat_Isocortex"
 
-    unknown_key = ("UNKNOWN", "UNKNOWN", "UNKNOWN")
+    unknown_key = ("UNKNOWN", "UNKNOWN", "UNKNOWN", "UNKNOWN")
     msg = re.escape(f"Could not retrieve inputs for {unknown_key}")
     with pytest.raises(ValueError, match=msg):
         synthdb.input_tools.select_input(*unknown_key)
@@ -134,10 +136,10 @@ def test_select_input(internal_db_session, saved_db_session):
 def test_create_with_params_and_distrs(internal_db_session, saved_db_session):
     """Test element creation with given params and distrs."""
     base_element = saved_db_session.get(
-        synthdb.schema.SynthesisInputsTable, ("Isocortex", "L4_UPC", "luigi_Isocortex")
+        synthdb.schema.SynthesisInputsTable, ("rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex")
     )
 
-    primary_key = ("test_region", "test_mtype", "luigi_Isocortex")
+    primary_key = ("test_rat", "test_region", "test_mtype", "luigi_rat_Isocortex")
     synthdb.input_tools.create_input(
         *primary_key,
         parameters_path=base_element.parameters_path,
@@ -151,7 +153,7 @@ def test_create_with_params_and_distrs(internal_db_session, saved_db_session):
 
 def test_create_automatic(internal_db_session, saved_db_session, mock_synthesis):
     """Test element creation with no given params and distrs."""
-    primary_key = ("Isocortex", "L4_UPC", "luigi_Isocortex")
+    primary_key = ("rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex")
     base_internal_element = internal_db_session.get(
         synthdb.schema.SynthesisInputsTable, primary_key
     )
@@ -170,7 +172,7 @@ def test_create_automatic(internal_db_session, saved_db_session, mock_synthesis)
 
 def test_create_existing(internal_db_session, saved_db_session):
     """Test element creation with no given params and distrs."""
-    primary_key = ("Isocortex", "L4_UPC", "luigi_Isocortex")
+    primary_key = ("rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex")
     base_internal_element = internal_db_session.get(
         synthdb.schema.SynthesisInputsTable, primary_key
     )
@@ -183,7 +185,7 @@ def test_create_existing(internal_db_session, saved_db_session):
 
 def test_create_imported_file(internal_db_session, saved_db_session, tmpdir, caplog):
     """Test element creation with imported params and distrs."""
-    primary_key = ("Isocortex", "L4_UPC", "luigi_Isocortex")
+    primary_key = ("rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex")
     base_internal_element = internal_db_session.get(
         synthdb.schema.SynthesisInputsTable, primary_key
     )
@@ -211,7 +213,7 @@ def test_create_imported_file(internal_db_session, saved_db_session, tmpdir, cap
     )
     input_distributions_path.unlink()
 
-    new_primary_key = ("test_region", "test_mtype", "luigi_Isocortex")
+    new_primary_key = ("test_rat", "test_region", "test_mtype", "luigi_rat_Isocortex")
 
     synthdb.input_tools.create_input(
         *new_primary_key,
@@ -234,9 +236,10 @@ def test_create_imported_file(internal_db_session, saved_db_session, tmpdir, cap
         ),
     ):
         synthdb.input_tools.create_input(
+            "test_rat_2",
             "test_region_2",
             "test_mtype_2",
-            "luigi_Isocortex",
+            "luigi_rat_Isocortex",
             parameters_path=parameters_path,
             distributions_path=None,
         )
@@ -248,9 +251,10 @@ def test_create_imported_file(internal_db_session, saved_db_session, tmpdir, cap
         ),
     ):
         synthdb.input_tools.create_input(
+            "test_rat_2",
             "test_region_2",
             "test_mtype_2",
-            "luigi_Isocortex",
+            "luigi_rat_Isocortex",
             parameters_path=None,
             distributions_path=distributions_path,
         )
@@ -264,9 +268,10 @@ def test_create_imported_file(internal_db_session, saved_db_session, tmpdir, cap
         ),
     ):
         synthdb.input_tools.create_input(
+            "test_rat_2",
             "test_region_2",
             "test_mtype_2",
-            "luigi_Isocortex",
+            "luigi_rat_Isocortex",
             parameters_path="UNKNOWN PARAMS",
             distributions_path="UNKNOWN DISTRS",
         )
@@ -276,9 +281,10 @@ def test_create_imported_file(internal_db_session, saved_db_session, tmpdir, cap
     caplog.clear()
     caplog.set_level(logging.DEBUG)
     synthdb.input_tools.create_input(
+        "test_rat_2",
         "test_region_2",
         "test_mtype_2",
-        "luigi_Isocortex",
+        "luigi_rat_Isocortex",
         parameters_path=created_element.parameters_path,
         distributions_path=created_element.distributions_path,
     )
@@ -294,12 +300,12 @@ def test_create_imported_file(internal_db_session, saved_db_session, tmpdir, cap
 
 def test_update(internal_db_session, saved_db_session, tmpdir, caplog):
     """Test element update."""
-    primary_key = ("Isocortex", "L4_UPC", "luigi_Isocortex")
+    primary_key = ("rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex")
     base_internal_element = internal_db_session.get(
         synthdb.schema.SynthesisInputsTable, primary_key
     )
 
-    other_primary_key = ("Isocortex", "L5_UPC", "luigi_Isocortex")
+    other_primary_key = ("rat", "Isocortex", "L5_UPC", "luigi_rat_Isocortex")
     other_element = saved_db_session.get(synthdb.schema.SynthesisInputsTable, other_primary_key)
 
     # Manually update values
@@ -443,7 +449,7 @@ def test_update(internal_db_session, saved_db_session, tmpdir, caplog):
 
 def test_rebuild(internal_db_session, saved_db_session, mock_synthesis, caplog):
     """Test element rebuild."""
-    primary_key = ("Isocortex", "L5_UPC", "luigi_Isocortex")
+    primary_key = ("rat", "Isocortex", "L5_UPC", "luigi_rat_Isocortex")
     base_internal_element = internal_db_session.get(
         synthdb.schema.SynthesisInputsTable, primary_key
     )
@@ -468,21 +474,21 @@ def test_rebuild(internal_db_session, saved_db_session, mock_synthesis, caplog):
 
     assert [i[2] for i in messages[:4]] == [
         (
-            "Rebuilding the file 'distr_luigi_Isocortex_Isocortex_L5_UPC.json' used by "
-            "the following entries:\n\tSynthesisInputs: (brain_region=Isocortex ; mtype=L5_UPC ; "
-            "luigi_config=luigi_Isocortex): "
-            "distributions_path=distr_luigi_Isocortex_Isocortex_L5_UPC.json, "
-            "parameters_path=params_luigi_Isocortex_Isocortex_L5_UPC.json"
+            "Rebuilding the file 'distr_luigi_rat_Isocortex_rat_Isocortex_L5_UPC.json' used by "
+            "the following entries:\n\tSynthesisInputs: (species=rat ; brain_region=Isocortex ; "
+            "mtype=L5_UPC ; luigi_config=luigi_rat_Isocortex): "
+            "distributions_path=distr_luigi_rat_Isocortex_rat_Isocortex_L5_UPC.json, "
+            "parameters_path=params_luigi_rat_Isocortex_rat_Isocortex_L5_UPC.json"
         ),
         (
-            "Rebuilding the file 'params_luigi_Isocortex_Isocortex_L5_UPC.json' used by "
-            "the following entries:\n\tSynthesisInputs: (brain_region=Isocortex ; mtype=L5_UPC ; "
-            "luigi_config=luigi_Isocortex): "
-            "distributions_path=distr_luigi_Isocortex_Isocortex_L5_UPC.json, "
-            "parameters_path=params_luigi_Isocortex_Isocortex_L5_UPC.json"
+            "Rebuilding the file 'params_luigi_rat_Isocortex_rat_Isocortex_L5_UPC.json' used by "
+            "the following entries:\n\tSynthesisInputs: (species=rat ; brain_region=Isocortex ; "
+            "mtype=L5_UPC ; luigi_config=luigi_rat_Isocortex): "
+            "distributions_path=distr_luigi_rat_Isocortex_rat_Isocortex_L5_UPC.json, "
+            "parameters_path=params_luigi_rat_Isocortex_rat_Isocortex_L5_UPC.json"
         ),
-        "Removing the file 'distr_luigi_Isocortex_Isocortex_L5_UPC.json'",
-        "Removing the file 'params_luigi_Isocortex_Isocortex_L5_UPC.json'",
+        "Removing the file 'distr_luigi_rat_Isocortex_rat_Isocortex_L5_UPC.json'",
+        "Removing the file 'params_luigi_rat_Isocortex_rat_Isocortex_L5_UPC.json'",
     ]
 
     # Check that the JSON files are no longer empty
@@ -498,16 +504,17 @@ def test_rebuild(internal_db_session, saved_db_session, mock_synthesis, caplog):
 
 def test_rebuild_multiple_entries(internal_db_session, saved_db_session, mock_synthesis, caplog):
     """Test element rebuild."""
-    primary_key = ("Isocortex", "L4_UPC", "luigi_Isocortex")
+    primary_key = ("rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex")
     base_internal_element = internal_db_session.get(
         synthdb.schema.SynthesisInputsTable, primary_key
     )
 
     # Update values of another entry to have duplicated values
     synthdb.input_tools.update_input(
+        "rat",
         "Isocortex",
         "L5_UPC",
-        "luigi_Isocortex",
+        "luigi_rat_Isocortex",
         parameters_path=base_internal_element.parameters_path,
         distributions_path=base_internal_element.distributions_path,
     )
@@ -532,31 +539,31 @@ def test_rebuild_multiple_entries(internal_db_session, saved_db_session, mock_sy
 
     assert [i[2] for i in messages[:4]] == [
         (
-            "Rebuilding the file 'distr_luigi_Isocortex_Isocortex_L4_UPC.json' used by the "
+            "Rebuilding the file 'distr_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json' used by the "
             "following entries:"
-            "\n\tSynthesisInputs: (brain_region=Isocortex ; mtype=L4_UPC ; "
-            "luigi_config=luigi_Isocortex): "
-            "distributions_path=distr_luigi_Isocortex_Isocortex_L4_UPC.json, "
-            "parameters_path=params_luigi_Isocortex_Isocortex_L4_UPC.json"
-            "\n\tSynthesisInputs: (brain_region=Isocortex ; mtype=L5_UPC ; "
-            "luigi_config=luigi_Isocortex): "
-            "distributions_path=distr_luigi_Isocortex_Isocortex_L4_UPC.json, "
-            "parameters_path=params_luigi_Isocortex_Isocortex_L4_UPC.json"
+            "\n\tSynthesisInputs: (species=rat ; brain_region=Isocortex ; mtype=L4_UPC ; "
+            "luigi_config=luigi_rat_Isocortex): "
+            "distributions_path=distr_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json, "
+            "parameters_path=params_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json"
+            "\n\tSynthesisInputs: (species=rat ; brain_region=Isocortex ; mtype=L5_UPC ; "
+            "luigi_config=luigi_rat_Isocortex): "
+            "distributions_path=distr_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json, "
+            "parameters_path=params_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json"
         ),
         (
-            "Rebuilding the file 'params_luigi_Isocortex_Isocortex_L4_UPC.json' used by the "
-            "following entries"
-            ":\n\tSynthesisInputs: (brain_region=Isocortex ; mtype=L4_UPC ; "
-            "luigi_config=luigi_Isocortex): "
-            "distributions_path=distr_luigi_Isocortex_Isocortex_L4_UPC.json, "
-            "parameters_path=params_luigi_Isocortex_Isocortex_L4_UPC.json"
-            "\n\tSynthesisInputs: (brain_region=Isocortex ; mtype=L5_UPC ; "
-            "luigi_config=luigi_Isocortex): "
-            "distributions_path=distr_luigi_Isocortex_Isocortex_L4_UPC.json, "
-            "parameters_path=params_luigi_Isocortex_Isocortex_L4_UPC.json"
+            "Rebuilding the file 'params_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json' used by "
+            "the following entries"
+            ":\n\tSynthesisInputs: (species=rat ; brain_region=Isocortex ; mtype=L4_UPC ; "
+            "luigi_config=luigi_rat_Isocortex): "
+            "distributions_path=distr_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json, "
+            "parameters_path=params_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json"
+            "\n\tSynthesisInputs: (species=rat ; brain_region=Isocortex ; mtype=L5_UPC ; "
+            "luigi_config=luigi_rat_Isocortex): "
+            "distributions_path=distr_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json, "
+            "parameters_path=params_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json"
         ),
-        "Removing the file 'distr_luigi_Isocortex_Isocortex_L4_UPC.json'",
-        "Removing the file 'params_luigi_Isocortex_Isocortex_L4_UPC.json'",
+        "Removing the file 'distr_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json'",
+        "Removing the file 'params_luigi_rat_Isocortex_rat_Isocortex_L4_UPC.json'",
     ]
 
     # Check that the JSON files are no longer empty
@@ -573,14 +580,14 @@ def test_rebuild_multiple_entries(internal_db_session, saved_db_session, mock_sy
 def test_remove(internal_db_session, saved_db_session):
     """Test element removal."""
     # Create a new element with the same inputs as an existing entry
-    base_primary_key = ("Isocortex", "L4_UPC", "luigi_Isocortex")
+    base_primary_key = ("rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex")
     base_internal_element = internal_db_session.get(
         synthdb.schema.SynthesisInputsTable, base_primary_key
     )
     assert (synthdb.input_tools.INPUTS_DIR / base_internal_element.parameters_path).exists()
     assert (synthdb.input_tools.INPUTS_DIR / base_internal_element.distributions_path).exists()
 
-    primary_key = ("test_region", "test_mtype", "luigi_Isocortex")
+    primary_key = ("test_rat", "test_region", "test_mtype", "luigi_rat_Isocortex")
     synthdb.input_tools.create_input(
         *primary_key,
         parameters_path=base_internal_element.parameters_path,
@@ -609,7 +616,9 @@ def test_remove(internal_db_session, saved_db_session):
 
     # Remove all inputs and check that all files are also removed
     for element in internal_db_session.query(synthdb.schema.SynthesisInputsTable).all():
-        synthdb.input_tools.remove_input(element.brain_region, element.mtype, element.luigi_config)
+        synthdb.input_tools.remove_input(
+            element.species, element.brain_region, element.mtype, element.luigi_config
+        )
 
     assert list(synthdb.input_tools.LUIGI_CONFIGS_DIR.iterdir()) == []
     assert list(synthdb.input_tools.INPUTS_DIR.iterdir()) == []
@@ -621,6 +630,11 @@ def test_list_inputs(internal_db_session, saved_db_session):
         saved_db_session.query(synthdb.input_tools.SynthesisInputsTable).all()
     )
 
+    assert sorted(synthdb.input_tools.list_inputs(species="rat")) == sorted(
+        saved_db_session.query(synthdb.input_tools.SynthesisInputsTable)
+        .filter(synthdb.input_tools.SynthesisInputsTable.species == "rat")
+        .all()
+    )
     assert sorted(synthdb.input_tools.list_inputs(brain_region="Isocortex")) == sorted(
         saved_db_session.query(synthdb.input_tools.SynthesisInputsTable)
         .filter(synthdb.input_tools.SynthesisInputsTable.brain_region == "Isocortex")
@@ -633,18 +647,20 @@ def test_list_inputs(internal_db_session, saved_db_session):
         .all()
     )
 
-    assert sorted(synthdb.input_tools.list_inputs(luigi_config="luigi_Isocortex")) == sorted(
+    assert sorted(synthdb.input_tools.list_inputs(luigi_config="luigi_rat_Isocortex")) == sorted(
         saved_db_session.query(synthdb.input_tools.SynthesisInputsTable)
-        .filter(synthdb.input_tools.SynthesisInputsTable.luigi_config == "luigi_Isocortex")
+        .filter(synthdb.input_tools.SynthesisInputsTable.luigi_config == "luigi_rat_Isocortex")
         .all()
     )
 
     assert sorted(
-        synthdb.input_tools.list_inputs(brain_region="Isocortex", luigi_config="luigi_Isocortex")
+        synthdb.input_tools.list_inputs(
+            brain_region="Isocortex", luigi_config="luigi_rat_Isocortex"
+        )
     ) == sorted(
         saved_db_session.query(synthdb.input_tools.SynthesisInputsTable)
         .filter(synthdb.input_tools.SynthesisInputsTable.brain_region == "Isocortex")
-        .filter(synthdb.input_tools.SynthesisInputsTable.luigi_config == "luigi_Isocortex")
+        .filter(synthdb.input_tools.SynthesisInputsTable.luigi_config == "luigi_rat_Isocortex")
         .all()
     )
 
@@ -655,32 +671,44 @@ def test_pull_inputs(tmpdir, internal_db_session, saved_db_session):
 
     # Fresh pull
     synthdb.input_tools.pull_inputs(
-        brain_region="Isocortex", luigi_config="luigi_Isocortex", output_path=output_path
+        species="rat",
+        brain_region="Isocortex",
+        luigi_config="luigi_rat_Isocortex",
+        output_path=output_path,
     )
     new_inputs = list(output_path.iterdir())
     assert len(new_inputs) == 2 * len(
-        synthdb.input_tools.list_inputs(brain_region="Isocortex", luigi_config="luigi_Isocortex")
+        synthdb.input_tools.list_inputs(
+            species="rat", brain_region="Isocortex", luigi_config="luigi_rat_Isocortex"
+        )
     )
 
     # Overwrite inputs
     synthdb.input_tools.pull_inputs(
-        brain_region="Isocortex", luigi_config="luigi_Isocortex", output_path=output_path
+        species="rat",
+        brain_region="Isocortex",
+        luigi_config="luigi_rat_Isocortex",
+        output_path=output_path,
     )
     new_inputs = list(output_path.iterdir())
     assert len(new_inputs) == 2 * len(
-        synthdb.input_tools.list_inputs(brain_region="Isocortex", luigi_config="luigi_Isocortex")
+        synthdb.input_tools.list_inputs(
+            species="rat", brain_region="Isocortex", luigi_config="luigi_rat_Isocortex"
+        )
     )
 
     # Unknown input
-    msg = "Could not retrieve any input for brain_region=UNKNOWN ; mtype=None ; luigi_config=None"
+    msg = "Could not retrieve any input for species=None ; brain_region=UNKNOWN ; mtype=None ; "
+    "luigi_config=None"
     with pytest.raises(ValueError, match=msg):
         synthdb.input_tools.pull_inputs(brain_region="UNKNOWN", output_path=output_path)
 
     # Concatenate inputs
     output_path = Path(tmpdir / "output_concatenate_Isocortex")
     synthdb.input_tools.pull_inputs(
+        species="rat",
         brain_region="Isocortex",
-        luigi_config="luigi_Isocortex",
+        luigi_config="luigi_rat_Isocortex",
         output_path=output_path,
         concatenate=True,
     )
@@ -717,26 +745,28 @@ def test_pull_inputs(tmpdir, internal_db_session, saved_db_session):
     output_path = Path(tmpdir / "output_inner_only_Isocortex")
     with pytest.raises(ValueError):
         synthdb.input_tools.pull_inputs(
+            species="rat",
             brain_region="Isocortex",
-            luigi_config="luigi_Isocortex",
+            luigi_config="luigi_rat_Isocortex",
             output_path=output_path,
             inner_only=True,
             concatenate=True,
         )
 
     synthdb.input_tools.pull_inputs(
+        species="rat",
         brain_region="Isocortex",
-        luigi_config="luigi_Isocortex",
+        luigi_config="luigi_rat_Isocortex",
         mtype="L1_DAC",
         output_path=output_path,
         inner_only=True,
     )
 
-    with (output_path / "tmd_parameters_luigi_Isocortex_Isocortex_L1_DAC.json").open(
+    with (output_path / "tmd_parameters_luigi_rat_Isocortex_rat_Isocortex_L1_DAC.json").open(
         "r", encoding="utf-8"
     ) as f:
         output_params = json.load(f)
-    with (output_path / "tmd_distributions_luigi_Isocortex_Isocortex_L1_DAC.json").open(
+    with (output_path / "tmd_distributions_luigi_rat_Isocortex_rat_Isocortex_L1_DAC.json").open(
         "r", encoding="utf-8"
     ) as f:
         output_distrs = json.load(f)
@@ -752,7 +782,7 @@ def test_validate_inputs(tmpdir, internal_db_session, saved_db_session):
 
     # Update an input to make it invalid
     invalidated_input = internal_db_session.get(
-        synthdb.schema.SynthesisInputsTable, ("Isocortex", "L4_UPC", "luigi_Isocortex")
+        synthdb.schema.SynthesisInputsTable, ("rat", "Isocortex", "L4_UPC", "luigi_rat_Isocortex")
     )
 
     params = synthdb.input_tools.load_internal_file(invalidated_input.parameters_path)
@@ -771,14 +801,14 @@ def test_validate_inputs(tmpdir, internal_db_session, saved_db_session):
 
     # Validate invalid inputs
     msg = (
-        r"""The file .*/tmd_parameters_luigi_Isocortex_Isocortex_L4_UPC\.json is not valid for """
-        r"""the mtype L4_UPC and region Isocortex for the following reason:
+        r"""The file .*/tmd_parameters_luigi_rat_Isocortex_rat_Isocortex_L4_UPC\.json is not """
+        r"""valid for the mtype L4_UPC and region Isocortex for the following reason:
 In \[apical_dendrite\]: Additional properties are not allowed \(.* were unexpected\)
 In \[apical_dendrite->apical_distance\]: 'INVALID TYPE' is not of type 'number'
 
 """
-        r"""The file .*/tmd_distributions_luigi_Isocortex_Isocortex_L4_UPC\.json is not valid for"""
-        r""" the mtype L4_UPC and region Isocortex for the following reason:
+        r"""The file .*/tmd_distributions_luigi_rat_Isocortex_rat_Isocortex_L4_UPC\.json is not """
+        r"""valid for the mtype L4_UPC and region Isocortex for the following reason:
 In \[apical_dendrite\]: Additional properties are not allowed \(.* were unexpected\)
 In \[apical_dendrite->num_trees\]: 'INVALID TYPE' is not of type 'object'"""
     )
