@@ -79,6 +79,7 @@ class CreateSynthesisInput(luigi.Task):
     mtype = luigi.Parameter()
     luigi_config = luigi.Parameter()
     region = luigi.Parameter(default="base")
+    species = luigi.Parameter(default="rat")
 
     def requires(self):
         """The required tasks."""
@@ -116,7 +117,7 @@ class CreateSynthesisInput(luigi.Task):
 
     def output(self):
         """Define output targets."""
-        suffix = _suffix(self.region, self.mtype, self.luigi_config)
+        suffix = _suffix(self.species, self.region, self.mtype, self.luigi_config)
         return {
             "params": luigi.LocalTarget(INPUTS_DIR / f"params{suffix}.json"),
             "distr": luigi.LocalTarget(INPUTS_DIR / f"distr{suffix}.json"),
