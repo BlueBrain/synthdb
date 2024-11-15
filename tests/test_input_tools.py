@@ -698,8 +698,10 @@ def test_pull_inputs(tmpdir, internal_db_session, saved_db_session):
     )
 
     # Unknown input
-    msg = "Could not retrieve any input for species=None ; brain_region=UNKNOWN ; mtype=None ; "
-    "luigi_config=None"
+    msg = (
+        "Could not retrieve any input for species=None ; brain_region=UNKNOWN ; mtype=None ; "
+        "luigi_config=None"
+    )
     with pytest.raises(ValueError, match=msg):
         synthdb.input_tools.pull_inputs(brain_region="UNKNOWN", output_path=output_path)
 
