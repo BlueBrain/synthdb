@@ -1,0 +1,128 @@
+{
+    "Isocortex": {
+        "L4_TPC": {
+            "apical_dendrite": {
+                "apical_distance": 0.0,
+                "branching_method": "bio_oriented",
+                "growth_method": "tmd_apical",
+                "has_apical_tuft": true,
+                "metric": "path_distances",
+                "modify": null,
+                "orientation": {
+                    "mode": "normal_pia_constraint",
+                    "values": {
+                        "direction": {
+                            "mean": 0.0,
+                            "std": 0.0
+                        }
+                    }
+                },
+                "randomness": 0.24,
+                "step_size": {
+                    "norm": {
+                        "mean": 1.0,
+                        "std": 0.2
+                    }
+                },
+                "targeting": 0.14,
+                "tree_type": 4
+            },
+            "axon": {
+                "bias": 1.0,
+                "bias_length": 0.7,
+                "branching_method": "bio_oriented",
+                "growth_method": "tmd_gradient",
+                "metric": "path_distances",
+                "modify": null,
+                "orientation": {
+                    "mode": "normal_pia_constraint",
+                    "values": {
+                        "direction": {
+                            "mean": 3.1415,
+                            "std": 0.2
+                        }
+                    }
+                },
+                "randomness": 0.2,
+                "step_size": {
+                    "norm": {
+                        "mean": 1.0,
+                        "std": 0.0
+                    }
+                },
+                "targeting": 0.2,
+                "tree_type": 2
+            },
+            "basal_dendrite": {
+                "branching_method": "bio_oriented",
+                "growth_method": "tmd",
+                "metric": "path_distances",
+                "modify": null,
+                "orientation": {
+                    "mode": "pia_constraint",
+                    "values": {
+                        "form": "step",
+                        "params": [
+                            1.650887536870526,
+                            0.6823598367597067
+                        ]
+                    }
+                },
+                "randomness": 0.24,
+                "step_size": {
+                    "norm": {
+                        "mean": 1.0,
+                        "std": 0.2
+                    }
+                },
+                "targeting": 0.14,
+                "tree_type": 3
+            },
+            "context_constraints": {
+                "apical_dendrite": {
+                    "extent_to_target": {
+                        "fraction": 0.8,
+                        "intercept": 0,
+                        "layer": 1,
+                        "slope": 1.0835295072445483
+                    },
+                    "hard_limit_max": {
+                        "fraction": 0.99,
+                        "layer": 1
+                    },
+                    "hard_limit_min": {
+                        "fraction": 0.1,
+                        "layer": 1
+                    }
+                },
+                "basal_dendrite": {
+                    "hard_limit_max": {
+                        "fraction": 0.99,
+                        "layer": 1
+                    }
+                }
+            },
+            "diameter_params": {
+                "method": "default",
+                "models": [
+                    "simpler"
+                ],
+                "neurite_types": [
+                    "basal_dendrite",
+                    "apical_dendrite",
+                    "axon"
+                ]
+            },
+            "grow_types": [
+                "basal_dendrite",
+                "apical_dendrite",
+                "axon"
+            ],
+            "origin": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    }
+}
