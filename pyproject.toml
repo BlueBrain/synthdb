@@ -1,3 +1,59 @@
+[project]
+name = "synthdb"
+authors = [
+    { name="Blue Brain Project, EPFL" }
+]
+description = "Small database to host synthesis-related files and integrated tools."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache License 2.0" }
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dynamic = ["version"]
+dependencies = [
+    "click>=8.0",
+    "luigi>=3.2",
+    "luigi-tools>=0.2.1",
+    "neurots>=3.6.0,<4",
+    "sqlalchemy>=1.4.24",
+    "synthesis-workflow>=1.2.1",
+]
+
+[project.optional-dependencies]
+docs = [
+    "docutils<0.21",  # Temporary fix for m2r2
+    "m2r2",
+    "sphinx",
+    "sphinx-autoapi",
+    "sphinx-bluebrain-theme",
+    "sphinx-click",
+]
+test = [
+    "pytest>=6.1",
+    "pytest-click>=1.1",
+    "pytest-console-scripts>=1.4",
+    "pytest-cov>=4.1",
+    "pytest-html>=3.2",
+]
+
+[project.urls]
+Homepage = "https://synthdb.readthedocs.io"
+Repository = "https://github.com/BlueBrain/synthdb"
+Tracker = "https://github.com/BlueBrain/synthdb/issues"
+
+[project.scripts]
+synthdb = "synthdb.cli:cli"
+
 [build-system]
 requires = [
     "setuptools>=45",
@@ -6,6 +62,10 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
+
+[tool.setuptools.packages.find]
+include = ["synthdb*"]
+exclude = ["synthdb.alembic*"]
 
 [tool.black]
 line-length = 100

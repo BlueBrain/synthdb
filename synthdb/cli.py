@@ -223,6 +223,7 @@ def list_entries(species, brain_region, mtype, luigi_config):
 
 
 @synthesis_inputs.command("pull")
+@click.option("--species", **_SPECIES)
 @click.option("--brain-region", **_BRAIN_REGION)
 @click.option("--mtype", **_MTYPE)
 @click.option("--luigi-config", **_LUIGI_CONFIG_SYNTH_INPUTS)
@@ -243,7 +244,7 @@ def list_entries(species, brain_region, mtype, luigi_config):
     default=False,
     help="Save only the data, not the region/mtpe keys (works for a single dataset query)",
 )
-def pull(brain_region, mtype, luigi_config, output_path, concatenate, inner_only):
+def pull(species, brain_region, mtype, luigi_config, output_path, concatenate, inner_only):
     """Pull entries from the database to generate inputs.
 
     List all entries according to the filters provided and generate the input files for each entry.
@@ -251,6 +252,7 @@ def pull(brain_region, mtype, luigi_config, output_path, concatenate, inner_only
     If several filters are given, the extracted entries will satisfy all of them.
     """
     pull_inputs(
+        species,
         brain_region,
         mtype,
         luigi_config,

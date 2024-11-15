@@ -9,7 +9,7 @@ copyright_year: '2022'
 distribution_name: synthdb
 download_url: https://github.com/BlueBrain/synthdb
 init_git: false
-maintainer: Adrien Berchet
+maintainer: Adrien Berchet (@adrien-berchet)
 package_name: synthdb
 project_description: Small database to host synthesis-related files and integrated
     tools.
@@ -22,7 +22,7 @@ setup_codeql: false
 ssh_url: git@github.com:BlueBrain/synthdb.git
 team_name: ''
 tracker_url: https://github.com/BlueBrain/synthdb/issues
-use_pyproject_toml: false
+use_pyproject_toml: true
 version: 0.0.3.dev0
 
 # End of Copier answers
