@@ -103,20 +103,20 @@ synthdb synthesis-inputs validate
 
 #### Pull params and distrs for a given entry (one can also pull several or all entries at once)
 ```bash
-synthdb synthesis-inputs pull --brain-region sscx --mtype L6_TPC:A --luigi-config luigi_sscx --output-path synth_inputs
+synthdb synthesis-inputs pull --species rat --brain-region sscx --mtype L6_TPC:A --luigi-config luigi_sscx --output-path synth_inputs
 ```
 It is possible to refine the filter using any combination of the ``--brain-region``, ``--mtype`` and ``--luigi-config`` parameters.
 
 #### Pull params and distrs for several entries into one file
 ```bash
-synthdb synthesis-inputs pull --brain-region sscx --output-path synth_inputs_sscx --concatenate
+synthdb synthesis-inputs pull --species rat --brain-region sscx --output-path synth_inputs_sscx --concatenate
 ```
 Here all the distributions and parameters of the SSCx brain region are pulled in the ``tmd_parameters.json`` and ``tmd_distributions.json`` files.
-It is possible to refine the filter using any combination of the ``--brain-region``, ``--mtype`` and ``--luigi-config`` parameters.
+It is possible to refine the filter using any combination of the ``species``, ``--brain-region``, ``--mtype`` and ``--luigi-config`` parameters.
 
 #### Create a new entry
 ```bash
-synthdb synthesis-inputs create new_region L6_TPC:A luigi_sscx --parameters-path tmd_parameters_luigi_sscx_sscx_L6_TPC:A.json --distributions-path tmd_distributions_luigi_sscx_sscx_L6_TPC:A.json
+synthdb synthesis-inputs create new_species new_region L6_TPC:A luigi_sscx --parameters-path tmd_parameters_luigi_sscx_sscx_L6_TPC:A.json --distributions-path tmd_distributions_luigi_sscx_sscx_L6_TPC:A.json
 ```
 
 #### Check the new entry
@@ -126,12 +126,12 @@ synthdb synthesis-inputs list --brain-region new_region
 
 #### Remove the new entry
 ```bash
-synthdb synthesis-inputs remove new_region L6_TPC:A luigi_sscx
+synthdb synthesis-inputs remove new_species new_region L6_TPC:A luigi_sscx
 ```
 
 #### Rebuild an entry using the morphology release given in the luigi config file
 ```bash
-synthdb synthesis-inputs rebuild --brain-region sscx --mtype L6_TPC:A --luigi-config luigi_sscx
+synthdb synthesis-inputs rebuild --species rat --brain-region sscx --mtype L6_TPC:A --luigi-config luigi_sscx
 ```
 
 ## Funding & Acknowledgment
@@ -140,4 +140,6 @@ The development of this software was supported by funding to the Blue Brain Proj
 a research center of the École polytechnique fédérale de Lausanne (EPFL),
 from the Swiss government's ETH Board of the Swiss Federal Institutes of Technology.
 
-Copyright (c) 2022-2024 Blue Brain Project/EPFL
+For license and authors, see `LICENSE.txt` and `AUTHORS.md` respectively.
+
+Copyright © 2022-2024 Blue Brain Project/EPFL

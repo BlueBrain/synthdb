@@ -3,6 +3,8 @@
 # pylint: disable=unused-argument
 import json
 
+import pytest
+
 import synthdb.cli
 
 
@@ -11,7 +13,7 @@ class TestInputs:
 
     def test_create(self, internal_db_session, saved_db_session, cli_runner):
         """Test the create CLI command."""
-        other_primary_key = ["Isocortex", "L5_UPC", "luigi_Isocortex"]
+        other_primary_key = ["rat", "Isocortex", "L5_UPC", "luigi_rat_Isocortex"]
         other_element = saved_db_session.get(synthdb.schema.SynthesisInputsTable, other_primary_key)
 
         result = cli_runner.invoke(
@@ -20,8 +22,9 @@ class TestInputs:
                 "-vv",
                 "synthesis-inputs",
                 "create",
+                "rat",
                 "test_region",
-                "luigi_Isocortex",
+                "luigi_rat_Isocortex",
                 "--mtype",
                 "test_mtype",
                 "--parameters-path",
@@ -30,12 +33,11 @@ class TestInputs:
                 other_element.distributions_path,
             ],
         )
-        print(result.output)
         assert result.exit_code == 0
 
     def test_update(self, internal_db_session, saved_db_session, cli_runner):
         """Test the update CLI command."""
-        other_primary_key = ["Isocortex", "L5_UPC", "luigi_Isocortex"]
+        other_primary_key = ["rat", "Isocortex", "L5_UPC", "luigi_rat_Isocortex"]
         other_element = saved_db_session.get(synthdb.schema.SynthesisInputsTable, other_primary_key)
 
         result = cli_runner.invoke(
@@ -74,6 +76,8 @@ class TestInputs:
             [
                 "synthesis-inputs",
                 "remove",
+                "--species",
+                "rat",
                 "--brain-region",
                 "Isocortex",
                 "--mtype",
@@ -110,6 +114,7 @@ class TestInputs:
         assert result.exit_code == 0
 
 
+@pytest.mark.skip(reason="The morphology-release features are disabled for now")
 class TestMorphologyRelease:
     """Tests for the CLI related to morphology releases."""
 

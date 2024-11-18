@@ -14,10 +14,11 @@ from importlib import metadata
 
 # -- Project information -----------------------------------------------------
 
-project = "SynthDB"
+project_name = "SynthDB"
+package_name = "synthdb"
 
 # The short X.Y version
-version = metadata.version("synthdb")
+version = metadata.version(package_name)
 
 # The full version, including alpha/beta/rc tags
 release = version
@@ -29,13 +30,13 @@ release = version
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
     "sphinx_click",
-    "m2r2",
 ]
 
 todo_include_todos = True
@@ -62,10 +63,10 @@ html_theme = "sphinx-bluebrain-theme"
 # html_static_path = ['_static']
 
 html_theme_options = {
-    "metadata_distribution": "synthdb",
+    "metadata_distribution": package_name,
 }
 
-html_title = project
+html_title = project_name
 
 # If true, links to the reST sources are added to the pages.
 html_show_sourcelink = False
@@ -83,3 +84,9 @@ autodoc_default_options = {
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
 }
+
+# MyST parser settings
+myst_enable_extensions = []
+myst_heading_anchors = 5
+myst_all_links_external = True
+suppress_warnings = ["myst.header"]

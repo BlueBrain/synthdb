@@ -1,6 +1,6 @@
 """Command Line Interface for the synthdb package.
 
-synthdb pull <mtype> <brain_region> <luigi_config> --to <output_path>
+synthdb pull <mtype> <species> <brain_region> <luigi_config> --to <output_path>
 """
 
 import configparser
@@ -27,6 +27,10 @@ from synthdb.schema import session
 
 logger = logging.getLogger(__name__)
 
+_SPECIES = {
+    "type": str,
+    "help": "The name of the species as stored in the DB.",
+}
 _BRAIN_REGION = {
     "type": str,
     "help": "The name of the brain region as stored in the DB.",
@@ -103,13 +107,16 @@ def synthesis_inputs():
 
 
 @synthesis_inputs.command("create")
+@click.argument("species")
 @click.argument("brain_region")
 @click.argument("luigi_config")
 @click.option("--mtype", **_MTYPE)
 @click.option("--parameters-path", **_PARAMS_PATH)
 @click.option("--distributions-path", **_DISTRS_PATH)
-def create(brain_region, luigi_config, mtype, parameters_path, distributions_path):
+def create(species, brain_region, luigi_config, mtype, parameters_path, distributions_path):
     """Create a new entry in the database.
+
+    SPECIES is the name of the species as stored in the DB.
 
     BRAIN_REGION is the name of the brain region as stored in the DB.
 
@@ -130,13 +137,14 @@ def create(brain_region, luigi_config, mtype, parameters_path, distributions_pat
         morphs_df = load_neurondb_to_dataframe(neurondb_path)
         mtypes = morphs_df.mtype.unique()
         for i, _mtype in enumerate(mtypes):
-            primary_key = (brain_region, _mtype, luigi_config)
+            primary_key = (species, brain_region, _mtype, luigi_config)
             print(f"Building {i + 1} / {len(mtypes)}: {primary_key}")
             selected_input = session.get(SynthesisInputsTable, primary_key)
 
             if selected_input is None:  # pragma: no cover
                 logger.info("Creating mtype: %s", _mtype)
                 create_input(
+                    species,
                     brain_region,
                     _mtype,
                     luigi_config,
@@ -144,17 +152,22 @@ def create(brain_region, luigi_config, mtype, parameters_path, distributions_pat
                     distributions_path=distributions_path,
                 )
     else:
-        create_input(brain_region, mtype, luigi_config, parameters_path, distributions_path)
+        create_input(
+            species, brain_region, mtype, luigi_config, parameters_path, distributions_path
+        )
 
 
 @synthesis_inputs.command("update")
+@click.argument("species")
 @click.argument("brain_region")
 @click.argument("mtype")
 @click.argument("luigi_config")
 @click.option("--parameters-path", **_PARAMS_PATH)
 @click.option("--distributions-path", **_DISTRS_PATH)
-def update(brain_region, mtype, luigi_config, parameters_path, distributions_path):
+def update(species, brain_region, mtype, luigi_config, parameters_path, distributions_path):
     """Update an entry in the database.
+
+    SPECIES is the name of the species as stored in the DB.
 
     BRAIN_REGION is the name of the brain region as stored in the DB.
 
@@ -167,46 +180,50 @@ def update(brain_region, mtype, luigi_config, parameters_path, distributions_pat
     distributions will be computed from the biological cells using the ``synthesis-workflow``
     package.
     """
-    update_input(brain_region, mtype, luigi_config, parameters_path, distributions_path)
+    update_input(species, brain_region, mtype, luigi_config, parameters_path, distributions_path)
 
 
 @synthesis_inputs.command("rebuild")
+@click.option("--species", **_SPECIES)
 @click.option("--brain-region", **_BRAIN_REGION)
 @click.option("--mtype", **_MTYPE)
 @click.option("--luigi-config", **_LUIGI_CONFIG_SYNTH_INPUTS)
-def rebuild(luigi_config, brain_region, mtype):
+def rebuild(luigi_config, species, brain_region, mtype):
     """Rebuild entries in the database according to the given filters with default values."""
-    listed_elements = list_inputs(brain_region, mtype, luigi_config)
+    listed_elements = list_inputs(species, brain_region, mtype, luigi_config)
     for i, element in enumerate(listed_elements):
         print(f"Rebuilding {i + 1} / {len(listed_elements)}: {element}")
-        rebuild_input(element.brain_region, element.mtype, element.luigi_config)
+        rebuild_input(element.species, element.brain_region, element.mtype, element.luigi_config)
 
 
 @synthesis_inputs.command("remove")
+@click.option("--species", **_SPECIES)
 @click.option("--brain-region", **_BRAIN_REGION)
 @click.option("--mtype", **_MTYPE)
 @click.option("--luigi-config", **_LUIGI_CONFIG_SYNTH_INPUTS)
-def remove(brain_region, mtype, luigi_config):
+def remove(species, brain_region, mtype, luigi_config):
     """Remove entries in the database."""
-    remove_input(brain_region, mtype, luigi_config)
+    remove_input(species, brain_region, mtype, luigi_config)
 
 
 @synthesis_inputs.command("list")
+@click.option("--species", **_SPECIES)
 @click.option("--brain-region", **_BRAIN_REGION)
 @click.option("--mtype", **_MTYPE)
 @click.option("--luigi-config", **_LUIGI_CONFIG_SYNTH_INPUTS)
-def list_entries(brain_region, mtype, luigi_config):
+def list_entries(species, brain_region, mtype, luigi_config):
     """List entries in the database.
 
     If several filters are given, the listed entries will satisfy all of them.
     """
-    listed_elements = list_inputs(brain_region, mtype, luigi_config)
+    listed_elements = list_inputs(species, brain_region, mtype, luigi_config)
     print(f"Found {len(listed_elements)} entries")
     for i in listed_elements:
         print(i)
 
 
 @synthesis_inputs.command("pull")
+@click.option("--species", **_SPECIES)
 @click.option("--brain-region", **_BRAIN_REGION)
 @click.option("--mtype", **_MTYPE)
 @click.option("--luigi-config", **_LUIGI_CONFIG_SYNTH_INPUTS)
@@ -227,7 +244,7 @@ def list_entries(brain_region, mtype, luigi_config):
     default=False,
     help="Save only the data, not the region/mtpe keys (works for a single dataset query)",
 )
-def pull(brain_region, mtype, luigi_config, output_path, concatenate, inner_only):
+def pull(species, brain_region, mtype, luigi_config, output_path, concatenate, inner_only):
     """Pull entries from the database to generate inputs.
 
     List all entries according to the filters provided and generate the input files for each entry.
@@ -235,6 +252,7 @@ def pull(brain_region, mtype, luigi_config, output_path, concatenate, inner_only
     If several filters are given, the extracted entries will satisfy all of them.
     """
     pull_inputs(
+        species,
         brain_region,
         mtype,
         luigi_config,

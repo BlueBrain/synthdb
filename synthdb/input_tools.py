@@ -38,8 +38,8 @@ LUIGI_CONFIGS_DIR.mkdir(parents=True, exist_ok=True)
 logger = logging.getLogger(__name__)
 
 
-def _suffix(brain_region, mtype, luigi_config):
-    return f"_{luigi_config}_{brain_region}_{mtype}"
+def _suffix(species, brain_region, mtype, luigi_config):
+    return f"_{luigi_config}_{species}_{brain_region}_{mtype}"
 
 
 SUBSTITUTION_MAPPINGS = {
@@ -79,6 +79,7 @@ class CreateSynthesisInput(luigi.Task):
     mtype = luigi.Parameter()
     luigi_config = luigi.Parameter()
     region = luigi.Parameter(default="base")
+    species = luigi.Parameter(default="rat")
 
     def requires(self):
         """The required tasks."""
@@ -116,7 +117,7 @@ class CreateSynthesisInput(luigi.Task):
 
     def output(self):
         """Define output targets."""
-        suffix = _suffix(self.region, self.mtype, self.luigi_config)
+        suffix = _suffix(self.species, self.region, self.mtype, self.luigi_config)
         return {
             "params": luigi.LocalTarget(INPUTS_DIR / f"params{suffix}.json"),
             "distr": luigi.LocalTarget(INPUTS_DIR / f"distr{suffix}.json"),
@@ -187,7 +188,7 @@ def check_json_files_not_empty(*files):
         raise NotValidError(f"The following files are empty: {empty_files}")
 
 
-def create_default_input(brain_region, mtype, luigi_config, log_level=None):
+def create_default_input(species, brain_region, mtype, luigi_config, log_level=None):
     """Create single set of input for an mtype and a luigi.cfg."""
     PathConfig.result_path = TMP_OUT_DIR
     reset_default_prefixes()
@@ -197,16 +198,21 @@ def create_default_input(brain_region, mtype, luigi_config, log_level=None):
         log_level = logging.WARNING
 
     if not luigi.build(
-        [CreateSynthesisInput(mtype=mtype, region=brain_region, luigi_config=luigi_config)],
+        [
+            CreateSynthesisInput(
+                mtype=mtype, species=species, region=brain_region, luigi_config=luigi_config
+            )
+        ],
         local_scheduler=True,
         log_level=logging.getLevelName(log_level),
     ):  # pragma: no cover
         raise RuntimeError(
             "Could not create default input for "
-            f"(brain_region={brain_region}, mtype={mtype}, luigi_config={luigi_config})"
+            f"(species={species}, brain_region={brain_region}, "
+            f"mtype={mtype}, luigi_config={luigi_config})"
         )
 
-    suffix = _suffix(brain_region, mtype, luigi_config)
+    suffix = _suffix(species, brain_region, mtype, luigi_config)
     out = {
         "params": f"params{suffix}.json",
         "distrs": f"distr{suffix}.json",
@@ -218,13 +224,15 @@ def create_default_input(brain_region, mtype, luigi_config, log_level=None):
     return out
 
 
-def _create_params_distrs(brain_region, mtype, luigi_config, parameters_path, distributions_path):
+def _create_params_distrs(
+    species, brain_region, mtype, luigi_config, parameters_path, distributions_path
+):
     """Create parameters and distributions if required."""
     check_files_exist(luigi_config, file_type="luigi_config")
 
     if parameters_path is None or distributions_path is None:
         created_input = create_default_input(
-            brain_region=brain_region, mtype=mtype, luigi_config=luigi_config
+            species=species, brain_region=brain_region, mtype=mtype, luigi_config=luigi_config
         )
     else:
         created_input = {}
@@ -247,10 +255,12 @@ def _create_params_distrs(brain_region, mtype, luigi_config, parameters_path, di
     return new_params, new_distrs
 
 
-def create_input(brain_region, mtype, luigi_config, parameters_path=None, distributions_path=None):
+def create_input(
+    species, brain_region, mtype, luigi_config, parameters_path=None, distributions_path=None
+):
     """Create input and insert it in the DB for a given set of region, mtype and luigi config."""
     # Check that the given entry does not already exist
-    primary_key = (brain_region, mtype, luigi_config)
+    primary_key = (species, brain_region, mtype, luigi_config)
     selected_input = session.get(SynthesisInputsTable, primary_key)
 
     if selected_input is not None:
@@ -266,7 +276,7 @@ def create_input(brain_region, mtype, luigi_config, parameters_path=None, distri
     check_files_exist(luigi_config, file_type="luigi_config")
     try:
         new_params, new_distrs = _create_params_distrs(
-            brain_region, mtype, luigi_config, parameters_path, distributions_path
+            species, brain_region, mtype, luigi_config, parameters_path, distributions_path
         )
     except NotValidError as exc:  # pragma: no cover
         logger.error(exc)
@@ -274,6 +284,7 @@ def create_input(brain_region, mtype, luigi_config, parameters_path=None, distri
 
     # Create the new entry in the DB
     new_obj = SynthesisInputsTable(
+        species=species,
         brain_region=brain_region,
         mtype=mtype,
         luigi_config=luigi_config,
@@ -287,9 +298,9 @@ def create_input(brain_region, mtype, luigi_config, parameters_path=None, distri
     logger.info("New element inserted in the DB: %s", new_obj)
 
 
-def select_input(brain_region, mtype, luigi_config):
+def select_input(species, brain_region, mtype, luigi_config):
     """Select and return an input entry from the DB."""
-    primary_key = (brain_region, mtype, luigi_config)
+    primary_key = (species, brain_region, mtype, luigi_config)
     selected_input = session.get(SynthesisInputsTable, primary_key)
 
     if selected_input is None:
@@ -331,14 +342,16 @@ def remove_orphans(luigi_config=None, parameters_path=None, distributions_path=N
         logger.info("Removed file for not being used by any input entry: %s", distributions_path)
 
 
-def update_input(brain_region, mtype, luigi_config, parameters_path=None, distributions_path=None):
+def update_input(
+    species, brain_region, mtype, luigi_config, parameters_path=None, distributions_path=None
+):
     """Update path of an input in the DB for a given set of region, mtype and luigi config."""
-    selected_input = select_input(brain_region, mtype, luigi_config)
+    selected_input = select_input(species, brain_region, mtype, luigi_config)
 
     if parameters_path == "auto" or distributions_path == "auto":
         try:
             new_params, new_distrs = _create_params_distrs(
-                brain_region, mtype, luigi_config, None, None
+                species, brain_region, mtype, luigi_config, None, None
             )
         except NotValidError as exc:  # pragma: no cover
             logger.error(exc)
@@ -370,9 +383,11 @@ def update_input(brain_region, mtype, luigi_config, parameters_path=None, distri
     )
 
 
-def remove_input(brain_region, mtype, luigi_config):
+def remove_input(species, brain_region, mtype, luigi_config):
     """Remove the given input from the DB."""
-    inputs = list_inputs(brain_region=brain_region, mtype=mtype, luigi_config=luigi_config)
+    inputs = list_inputs(
+        species=species, brain_region=brain_region, mtype=mtype, luigi_config=luigi_config
+    )
     for selected_input in inputs:
         # Remove the entry from the DB
         session.delete(selected_input)
@@ -389,9 +404,9 @@ def remove_input(brain_region, mtype, luigi_config):
             pass
 
 
-def rebuild_input(brain_region, mtype, luigi_config):
+def rebuild_input(species, brain_region, mtype, luigi_config):
     """Rebuild the parameters and distributions for a given input."""
-    selected_input = select_input(brain_region, mtype, luigi_config)
+    selected_input = select_input(species, brain_region, mtype, luigi_config)
     query = session.query(SynthesisInputsTable)
     distrs_query = query.filter(
         SynthesisInputsTable.distributions_path == selected_input.distributions_path
@@ -425,13 +440,20 @@ def rebuild_input(brain_region, mtype, luigi_config):
     params_file.unlink()
 
     update_input(
-        brain_region, mtype, luigi_config, parameters_path="auto", distributions_path="auto"
+        species,
+        brain_region,
+        mtype,
+        luigi_config,
+        parameters_path="auto",
+        distributions_path="auto",
     )
 
 
-def list_inputs(brain_region=None, mtype=None, luigi_config=None):
+def list_inputs(species=None, brain_region=None, mtype=None, luigi_config=None):
     """List inputs in the DB with given filters for a given set of region, mtype or luigi config."""
     query = session.query(SynthesisInputsTable)
+    if species is not None:
+        query = query.filter(SynthesisInputsTable.species == species)
     if brain_region is not None:
         query = query.filter(SynthesisInputsTable.brain_region == brain_region)
     if mtype is not None:
@@ -451,6 +473,7 @@ def load_internal_file(internal_path):
 
 
 def pull_inputs(
+    species=None,
     brain_region=None,
     mtype=None,
     luigi_config=None,
@@ -464,16 +487,20 @@ def pull_inputs(
         raise ValueError("Cannot use inner-only and concatenate together")
 
     logger.info(
-        "Pulling inputs for brain_region=%s ; mtype=%s ; luigi_config=%s",
+        "Pulling inputs for species=%s ; brain_region=%s ; mtype=%s ; luigi_config=%s",
+        species,
         brain_region,
         mtype,
         luigi_config,
     )
-    inputs = list_inputs(brain_region=brain_region, mtype=mtype, luigi_config=luigi_config)
+    inputs = list_inputs(
+        species=species, brain_region=brain_region, mtype=mtype, luigi_config=luigi_config
+    )
 
     if not inputs:
         raise ValueError(
-            f"Could not retrieve any input for brain_region={brain_region} ; mtype={mtype} ; "
+            f"Could not retrieve any input for species={species} ; "
+            f"brain_region={brain_region} ; mtype={mtype} ; "
             f"luigi_config={luigi_config}"
         )
 
@@ -489,13 +516,17 @@ def pull_inputs(
             suffix = ""
         else:
             suffix = _suffix(
-                selected_input.brain_region, selected_input.mtype, selected_input.luigi_config
+                selected_input.species,
+                selected_input.brain_region,
+                selected_input.mtype,
+                selected_input.luigi_config,
             )
         params_to = output_path / f"tmd_parameters{suffix}.json"
         distr_to = output_path / f"tmd_distributions{suffix}.json"
 
         outputs.append(
             {
+                "species": selected_input.species,
                 "brain_region": selected_input.brain_region,
                 "mtype": selected_input.mtype,
                 "luigi_config": selected_input.luigi_config,
