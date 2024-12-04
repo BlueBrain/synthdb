@@ -1,0 +1,22 @@
+STRd:
+  layers:
+  names:
+  region_queries:
+  thicknesses:
+  boundaries:
+    - mtypes:
+      - CP_MSN1
+      - CP_MSN2
+      - CP_FS
+      - CP_LTS
+      - CP_CTAN
+      neurite_types:
+        - basal_dendrite
+        - axon
+      params_section:
+        d_min: 10.0
+        d_max: 50.0
+      params_trunk:
+        d_min: 10.0
+        d_max: 50.0
+      path: striatum_boundary.obj
