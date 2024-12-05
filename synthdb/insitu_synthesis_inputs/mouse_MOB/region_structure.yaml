@@ -1,0 +1,61 @@
+MOB:
+  layers:
+  - MOBgl
+  - MOBopl
+  - MOBmi
+  - MOBipl
+  - MOBgr
+  names:
+    MOBgl: MOBgl
+    MOBopl: MOBopl
+    MOBmi: MOBmi
+    MOBipl: MOBipl
+    MOBgr: MOBgr
+  region_queries:
+    MOBgl: '@.*gl$'
+    MOBopl: '@.*opl$'
+    MOBmi: '@.*mi$'
+    MOBipl: '@.*ipl$'
+    MOBgr: '@.*gr$'
+  directions:
+    - mtypes:
+      - MOBmi_MC
+      - MOBopl_mTC
+      neurite_types:
+        - basal_dendrite
+      params:
+        direction: [0, 1, 0]
+        power: 2.0
+        mode: perpendicular
+  boundaries:
+    - mtypes:
+      - MOBopl_mTC
+      - MOBmi_MC
+      params_section:
+        d_min: 5
+        d_max: 20
+        power: 2
+      neurite_types:
+        - basal_dendrite
+      path: pia_mesh.obj
+    - mtypes:
+      - MOBopl_mTC
+      - MOBmi_MC
+      neurite_types:
+        - basal_dendrite
+      params_section:
+        d_min: 1
+        d_max: 20
+      path: MOBgl.obj
+    - mtypes:
+      - MOBopl_mTC
+      - MOBmi_MC
+      neurite_types:
+        - apical_dendrite
+      params_section:
+        d_min: 0
+        d_max: 200
+        power: 3.0
+      mode: attractive
+      path: glomeruli
+      multimesh_mode: territories

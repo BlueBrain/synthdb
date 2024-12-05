@@ -1,0 +1,25 @@
+version: v2.0
+neurons:
+  - density: '{VPL_TC_densities}'
+    region: '@PO|VPL'
+    traits:
+      layer: VPL
+      mtype: VPL_TC
+      etype:
+        dNAD_ltb: 0.36
+        dAD_ltb: 0.64
+  - density: '{VPL_IN_densities}'
+    region: '@PO|VPL'
+    traits:
+      layer: VPL
+      mtype: VPL_IN
+      etype:
+        bAC_IN: 1.0
+  - density: '{RT_RC_densities}'
+    region: 'RT'
+    traits:
+      layer: Rt
+      mtype: Rt_RC
+      etype:
+        cNAD_noscltb: 0.43
+        cAD_noscltb: 0.57

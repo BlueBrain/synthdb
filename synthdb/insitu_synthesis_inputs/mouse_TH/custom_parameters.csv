@@ -1,0 +1,4 @@
+mtype,entry,value
+VPL_TC,basal_dendrite.orientation.mode,pia_constraint
+VPL_IN,basal_dendrite.orientation.mode,pia_constraint
+Rt_RC,basal_dendrite.orientation.mode,pia_constraint

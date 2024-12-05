@@ -1,0 +1,33 @@
+version: v2.0
+neurons:
+
+  - density: '{[cell_density]MC}'
+    region: '@MOBmi'
+    traits:
+      layer: MOBmi
+      mtype: MOBmi_MC
+      etype:
+        bAC: 1
+
+  - density: '{[cell_density]mTC}'
+    region: '@MOBopl'
+    traits:
+      layer: MOBopl
+      mtype: MOBopl_mTC
+      etype:
+        bAC: 1
+  - density: '{[cell_density]sGC}'
+    region: '@MOBgr'
+    traits:
+      layer: MOBgr
+      mtype: MOBgr_sGC
+      etype:
+        bAC: 1
+
+  - density: '{[cell_density]dGC}'
+    region: '@MOBgr'
+    traits:
+      layer: MOBgr
+      mtype: MOBgr_dGC
+      etype:
+        bAC: 1
