@@ -1,0 +1,30 @@
+version: v2.0
+neurons:
+- density: '{[cell_density]CA2sp_PC:B}'
+  region: 'CA2sp'
+  traits:
+    layer: CA2sp
+    mtype: CA2sp_PC:B
+    etype:
+      cACpyr: 1
+- density: '{[cell_density]CA2sp_PC:Ma}'
+  region: 'CA2sp'
+  traits:
+    layer: CA2sp
+    mtype: CA2sp_PC:Ma
+    etype:
+      cACpyr: 1
+- density: '{[cell_density]CA2sp_PC:Mb}'
+  region: 'CA2sp'
+  traits:
+    layer: CA2sp
+    mtype: CA2sp_PC:Mb
+    etype:
+      cACpyr: 1
+- density: '{[cell_density]CA2sp_PC:Mc}'
+  region: 'CA2sp'
+  traits:
+    layer: CA2sp
+    mtype: CA2sp_PC:Mc
+    etype:
+      cACpyr: 1

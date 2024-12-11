@@ -1,0 +1,79 @@
+O0:
+  layers:
+  - MOBgl
+  - MOBopl
+  - MOBmi
+  - MOBipl
+  - MOBgr
+  names:
+    MOBgl: MOBgl
+    MOBopl: MOBopl
+    MOBmi: MOBmi
+    MOBipl: MOBipl
+    MOBgr: MOBgr
+  region_queries:
+    MOBgl: '@.*gl$'
+    MOBopl: '@.*opl$'
+    MOBmi: '@.*mi$'
+    MOBipl: '@.*ipl$'
+    MOBgr: '@.*gr$'
+  thicknesses:
+    MOBgl: 150
+    MOBopl: 300
+    MOBmi: 50
+    MOBipl: 50
+    MOBgr: 400
+  directions:
+    - mtypes:
+      - MOBmi_MC
+      - MOBopl_mTC
+      neurite_types:
+        - basal_dendrite
+      processes:
+        - major
+      params:
+        direction: [0, 1, 0]
+        power: 3.0
+        mode: perpendicular
+        layers: [2]
+    - mtypes:
+      - MOBmi_MC
+      - MOBopl_mTC
+      neurite_types:
+        - basal_dendrite
+      processes:
+        - major
+      params:
+        direction: [0, 1, 0]
+        power: 2.0
+        mode: parallel
+        layers: [3, 4]
+  boundaries:
+    - mtypes:
+      - MOBmi_MC
+      - MOBopl_mTC
+      neurite_types:
+        - apical_dendrite
+      params_section:
+        d_min: 5
+        d_max: 15
+      path: pia_mesh.obj
+    - mtypes:
+      - MOBopl_mTC
+      neurite_types:
+        - basal_dendrite
+      params_section:
+        d_min: 1
+        d_max: 10
+      path: MOBgl.obj
+    - mtypes:
+      - MOBmi_MC
+      - MOBopl_mTC
+      neurite_types:
+        - apical_dendrite
+      params_section:
+        d_min: 0
+        d_max: 300
+        power: 4
+      mode: attractive
+      path: glomeruli

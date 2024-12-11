@@ -1,0 +1,28 @@
+default:  # this will be applied on all mtypes if corresponding key is not present below
+    basal_dendrite:
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99
+
+MOBgr_GC:
+    basal_dendrite:
+        extent_to_target:
+            layer: L2
+            fraction: 0.5
+
+MOBmi_MC:
+    apical_dendrite:
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99
+        extent_to_target:
+            layer: L1
+            fraction: 0.5
+MOBopl_mTC:
+    apical_dendrite:
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99
+        extent_to_target:
+            layer: L1
+            fraction: 0.5

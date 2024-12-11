@@ -1,0 +1,55 @@
+CA3:
+  layers:
+  - CA3slm
+  - CA3sr
+  - CA3sp
+  - CA3so
+  names:
+    CA3slm: CA3slm
+    CA3sr: CA3sr
+    CA3sp: CA3sp
+    CA3so: CA3so
+  region_queries:
+    CA3slm: CA3slm
+    CA3sr: CA3sr
+    CA3sp: CA3sp
+    CA3so: CA3so
+  thicknesses:
+    CA3slm: 134
+    CA3sr: 256
+    CA3sp: 54
+    CA3so: 154
+  boundaries:
+    - mtypes:
+      - CA3sp_PC
+      - CA3sp_PC:ventral
+      - CA3sp_PC:dorsal
+      neurite_types:
+        - axon
+        - apical_dendrite
+        - basal_dendrite
+      params_section:
+        d_min: 1
+        d_max: 50
+      path: CA_mesh.obj
+  directions:
+    - mtypes:
+      - CA3sp_PC
+      - CA3sp_PC:ventral
+      - CA3sp_PC:dorsal
+      neurite_types:
+        - basal_dendrite
+      params:
+        direction: [0, -1.0, 0]
+        strength: 1.5
+    - mtypes:
+      - CA3sp_PC
+      - CA3sp_PC:ventral
+      - CA3sp_PC:dorsal
+      neurite_types:
+        - axon
+      processes:
+        - secondary
+      params:
+        direction: [1, 0, 0]
+        strength: 2.0

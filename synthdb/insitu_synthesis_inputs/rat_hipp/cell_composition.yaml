@@ -1,0 +1,90 @@
+version: v2.0
+neurons:
+- density: '{SLM_PPA}'
+  region: '@SLM$'
+  traits:
+    layer: 'SLM'
+    mtype: SLM_PPA
+    etype:
+      bAC: 1
+- density: '{SR_SCA}'
+  region: '@SR$'
+  traits:
+    layer: 'SR'
+    mtype: SR_SCA
+    etype:
+      cAC: 1
+- density: 264000
+  region: '@SP$'
+  traits:
+    layer: 'SP'
+    mtype: SP_PC
+    etype:
+      cACpyr: 1
+- density: 7206.0523387299
+  region: '@SP$'
+  traits:
+    layer: 'SP'
+    mtype: SP_PVBC
+    etype:
+      cNAC: 0.7
+      bAC: 0.3
+- density: 4691.100980005
+  region: '@SP$'
+  traits:
+    layer: 'SP'
+    mtype: SP_CCKBC
+    etype:
+      cAC: 1
+- density: 2189.1804573357
+  region: '@SP$'
+  traits:
+    layer: 'SP'
+    mtype: SP_BS
+    etype:
+      cNAC: 0.75
+      bAC: 0.25
+- density: 1915.5329001687
+  region: '@SP$'
+  traits:
+    layer: 'SP'
+    mtype: SP_AA
+    etype:
+      bAC: 1
+- density: 11480.1665649567
+  region: '@SP$'
+  traits:
+    layer: 'SP'
+    mtype: SP_Ivy
+    etype:
+      cNAC: 0.33
+      bAC: 0.67
+- density: 700.3821234535
+  region: '@SO$'
+  traits:
+    layer: 'SO'
+    mtype: SO_OLM
+    etype:
+      cAC: 1
+- density: 226.3430033112
+  region: '@SO$'
+  traits:
+    layer: 'SO'
+    mtype: SO_BS
+    etype:
+      cNAC: 0.75
+      bAC: 0.25
+- density: 298.9435892789
+  region: '@SO$'
+  traits:
+    layer: 'SO'
+    mtype: SO_Tri
+    etype:
+      cAC: 1
+- density: 81.1418313757
+  region: '@SO$'
+  traits:
+    layer: 'SO'
+    mtype: SO_BP
+    etype:
+      cNAC: 1

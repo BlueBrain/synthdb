@@ -1,0 +1,53 @@
+SSp-bfd:
+  layers:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  names:
+    1: layer 1
+    2: layer 2
+    3: layer 3
+    4: layer 4
+    5: layer 5
+    6: layer 6
+  region_queries:
+    1: '@^(?!SSp-bfd-[A-Z][0-9]$).*1$'
+    2: '@^(?!SSp-bfd-[A-Z][0-9]$).*2$'
+    3: '@^(?!SSp-bfd-[A-Z][0-9]$).*3$'
+    4: '@^(?!SSp-bfd-[A-Z][0-9]$).*4$'
+    5: '@^(?!SSp-bfd-[A-Z][0-9]$).*5$'
+    6: '@^(?!SSp-bfd-[A-Z][0-9]$).*6[ab]$'
+  thicknesses:
+    1: 69
+    2: 135
+    3: 100
+    4: 208
+    5: 248
+    6: 451
+  boundaries:
+    - mtypes:
+      - L5_TPC:A
+      neurite_types:
+        - apical_dendrite
+      params_section:
+        d_min: 5
+        d_max: 15
+      path: pia_mesh.obj
+    - mtypes:
+      - L4_SSC
+      - L4_UPC
+      neurite_types:
+        - basal_dendrite
+      params_section:
+        d_min: -5.
+        d_max: 40
+        power: 1.3
+      params_trunk:
+        d_min: -5.
+        d_max: 40
+        power: 1.3
+      path: barrels
+      multimesh_mode: inside

@@ -1,0 +1,42 @@
+CA1:
+  layers:
+  - CA1slm
+  - CA1sr
+  - CA1sp
+  - CA1so
+  names:
+    CA1slm: CA1slm
+    CA1sr: CA1sr
+    CA1sp: CA1sp
+    CA1so: CA1so
+  region_queries:
+    CA1slm: CA1slm
+    CA1sr: CA1sr
+    CA1sp: CA1sp
+    CA1so: CA1so
+  thicknesses:
+    CA1slm: 134
+    CA1sr: 256
+    CA1sp: 54
+    CA1so: 154
+  boundaries:
+    - mtypes:
+      - CA1sp_PC
+      neurite_types:
+        - axon
+        - apical_dendrite
+        - basal_dendrite
+      params_section:
+        d_min: 1
+        d_max: 50
+      path: CA_mesh.obj
+  directions:
+    - mtypes:
+      - CA1sp_PC
+      neurite_types:
+        - axon
+      processes:
+        - secondary
+      params:
+        direction: [1, 0, 0]
+        strength: 2.0

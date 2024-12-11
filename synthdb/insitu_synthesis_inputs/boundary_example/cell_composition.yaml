@@ -1,0 +1,44 @@
+version: v2.0
+neurons:
+- density: '{[cell_density]L1_open}'
+  region: '@1$'
+  traits:
+    etype: {bNAC: 1.0}
+    layer: 1
+    mtype: L1_open
+- density: '{[cell_density]L1_hard}'
+  region: '@1$'
+  traits:
+    etype: {bNAC: 1.0}
+    layer: 1
+    mtype: L1_hard
+- density: '{[cell_density]L1_hard_trunk}'
+  region: '@1$'
+  traits:
+    etype: {bNAC: 1.0}
+    layer: 1
+    mtype: L1_hard_trunk
+- density: '{[cell_density]L1_leaky}'
+  region: '@1$'
+  traits:
+    etype: {bNAC: 1.0}
+    layer: 1
+    mtype: L1_leaky
+- density: '{[cell_density]L1_attractive}'
+  region: '@1$'
+  traits:
+    etype: {bNAC: 1.0}
+    layer: 1
+    mtype: L1_attractive
+- density: '{[cell_density]L1_left}'
+  region: '@1$'
+  traits:
+    etype: {bNAC: 1.0}
+    layer: 1
+    mtype: L1_left
+- density: '{[cell_density]L1_down}'
+  region: '@1$'
+  traits:
+    etype: {bNAC: 1.0}
+    layer: 1
+    mtype: L1_down

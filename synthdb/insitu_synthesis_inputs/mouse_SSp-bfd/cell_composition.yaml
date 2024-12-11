@@ -1,0 +1,1790 @@
+neurons:
+- density: '{L6_TPC:A_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 6
+    mtype: L6_TPC:A
+- density: '{L3_TPC:B_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 3
+    mtype: L3_TPC:C
+- density: '{L5_TPC:A_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 5
+    mtype: L5_TPC:A
+- density: '{L2_TPC:B_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 2
+    mtype: L2_TPC:B
+- density: '{L3_TPC:A_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 3
+    mtype: L3_TPC:A
+- density: '{L5_TPC:B_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 5
+    mtype: L5_TPC:B
+- density: '{L4_SSC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 4
+    mtype: L4_SSC
+- density: '{L4_UPC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 4
+    mtype: L4_UPC
+- density: '{L2_TPC:A_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 2
+    mtype: L2_TPC:A
+- density: '{L6_BPC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 6
+    mtype: L6_BPC
+- density: '{L2_IPC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 2
+    mtype: L2_IPC
+- density: '{L6_TPC:C_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 6
+    mtype: L6_TPC:C
+- density: '{L4_TPC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 4
+    mtype: L4_TPC
+- density: '{L6_UPC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 6
+    mtype: L6_UPC
+- density: '{L6_IPC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 6
+    mtype: L6_IPC
+- density: '{L5_TPC:C_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 5
+    mtype: L5_TPC:C
+- density: '{L5_NBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 5
+    mtype: L5_NBC
+- density: '{L4_NBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_NBC
+- density: '{L4_NBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 4
+    mtype: L4_NBC
+- density: '{L23_CHC-CNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cNAC
+    layer: 3
+    mtype: L23_CHC
+- density: '{L23_CHC-CNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cNAC
+    layer: 2
+    mtype: L23_CHC
+- density: '{L4_MC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 4
+    mtype: L4_MC
+- density: '{L5_MC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 5
+    mtype: L5_MC
+- density: '{L1_DAC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 1
+    mtype: L1_DAC
+- density: '{L23_BTC-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_BTC
+- density: '{L23_BTC-CAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cACint
+    layer: 2
+    mtype: L23_BTC
+- density: '{L23_MC-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-CAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cACint
+    layer: 2
+    mtype: L23_MC
+- density: '{L5_LBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 5
+    mtype: L5_LBC
+- density: '{L6_NBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_NBC
+- density: '{L5_CHC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_CHC
+- density: '{L23_NBC-BAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bAC
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-BAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bAC
+    layer: 2
+    mtype: L23_NBC
+- density: '{L23_BTC-DNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dNAC
+    layer: 3
+    mtype: L23_BTC
+- density: '{L23_BTC-DNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dNAC
+    layer: 2
+    mtype: L23_BTC
+- density: '{L5_MC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 5
+    mtype: L5_MC
+- density: '{L23_MC-DNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dNAC
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-DNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dNAC
+    layer: 2
+    mtype: L23_MC
+- density: '{L4_LBC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 4
+    mtype: L4_LBC
+- density: '{L23_BTC-BNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bNAC
+    layer: 3
+    mtype: L23_BTC
+- density: '{L23_BTC-BNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bNAC
+    layer: 2
+    mtype: L23_BTC
+- density: '{L1_SLAC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 1
+    mtype: L1_SAC
+- density: '{L5_LBC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 5
+    mtype: L5_LBC
+- density: '{L23_NBC-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-CAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cACint
+    layer: 2
+    mtype: L23_NBC
+- density: '{L5_NBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 5
+    mtype: L5_NBC
+- density: '{L5_BP-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 5
+    mtype: L5_BP
+- density: '{L4_LBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 4
+    mtype: L4_LBC
+- density: '{L23_LBC-BIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bIR
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-BIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bIR
+    layer: 2
+    mtype: L23_LBC
+- density: '{L5_DBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 5
+    mtype: L5_DBC
+- density: '{L6_SBC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 6
+    mtype: L6_SBC
+- density: '{L23_BP-BAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bAC
+    layer: 3
+    mtype: L23_BP
+- density: '{L23_BP-BAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bAC
+    layer: 2
+    mtype: L23_BP
+- density: '{L5_NGC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_NGC
+- density: '{L23_LBC-CIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cIR
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-CIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cIR
+    layer: 2
+    mtype: L23_LBC
+- density: '{L6_LBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 6
+    mtype: L6_LBC
+- density: '{L6_BP-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 6
+    mtype: L6_BP
+- density: '{L1_DAC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 1
+    mtype: L1_DAC
+- density: '{L23_SBC-BNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bNAC
+    layer: 3
+    mtype: L23_SBC
+- density: '{L23_SBC-BNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bNAC
+    layer: 2
+    mtype: L23_SBC
+- density: '{L23_BTC-BIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bIR
+    layer: 3
+    mtype: L23_BTC
+- density: '{L23_BTC-BIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bIR
+    layer: 2
+    mtype: L23_BTC
+- density: '{L23_MC-BSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bSTUT
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-BSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bSTUT
+    layer: 2
+    mtype: L23_MC
+- density: '{L4_CHC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 4
+    mtype: L4_CHC
+- density: '{L6_MC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 6
+    mtype: L6_MC
+- density: '{L6_LBC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 6
+    mtype: L6_LBC
+- density: '{L23_NBC-DNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dNAC
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-DNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dNAC
+    layer: 2
+    mtype: L23_NBC
+- density: '{L6_BTC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 6
+    mtype: L6_BTC
+- density: '{L5_BP-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_BP
+- density: '{L4_NBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 4
+    mtype: L4_NBC
+- density: '{L23_LBC-BNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bNAC
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-BNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bNAC
+    layer: 2
+    mtype: L23_LBC
+- density: '{L4_LBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 4
+    mtype: L4_LBC
+- density: '{L6_NBC-DSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: dSTUT
+    layer: 6
+    mtype: L6_NBC
+- density: '{L4_NGC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 4
+    mtype: L4_NGC
+- density: '{L6_DBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 6
+    mtype: L6_DBC
+- density: '{L23_DBC-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_DBC
+- density: '{L23_DBC-CAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cACint
+    layer: 2
+    mtype: L23_DBC
+- density: '{L4_MC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 4
+    mtype: L4_MC
+- density: '{L23_MC-CIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cIR
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-CIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cIR
+    layer: 2
+    mtype: L23_MC
+- density: '{L23_NGC-BNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bNAC
+    layer: 3
+    mtype: L23_NGC
+- density: '{L23_NGC-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_NGC
+- density: '{L5_SBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 5
+    mtype: L5_SBC
+- density: '{L6_NGC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 6
+    mtype: L6_NGC
+- density: '{L5_NBC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 5
+    mtype: L5_NBC
+- density: '{L6_MC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_MC
+- density: '{L4_NBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 4
+    mtype: L4_NBC
+- density: '{L4_LBC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 4
+    mtype: L4_LBC
+- density: '{L23_MC-CNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cNAC
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-CNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cNAC
+    layer: 2
+    mtype: L23_MC
+- density: '{L4_MC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 4
+    mtype: L4_MC
+- density: '{L6_NBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 6
+    mtype: L6_NBC
+- density: '{L6_MC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 6
+    mtype: L6_MC
+- density: '{L4_CHC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 4
+    mtype: L4_CHC
+- density: '{L6_DBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 6
+    mtype: L6_DBC
+- density: '{L6_NGC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 6
+    mtype: L6_NGC
+- density: '{L5_LBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 5
+    mtype: L5_LBC
+- density: '{L6_DBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_DBC
+- density: '{L6_NBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 6
+    mtype: L6_NBC
+- density: '{L5_LBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 5
+    mtype: L5_LBC
+- density: '{L23_NBC-BNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bNAC
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-BNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bNAC
+    layer: 2
+    mtype: L23_NBC
+- density: '{L6_HPC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 6
+    mtype: L6_HPC
+- density: '{L5_UPC_cADpyr}'
+  region: root
+  traits:
+    etype: cADpyr
+    layer: 5
+    mtype: L5_UPC
+- density: '{L5_MC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 5
+    mtype: L5_MC
+- density: '{L5_MC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 5
+    mtype: L5_MC
+- density: '{L4_LBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 4
+    mtype: L4_LBC
+- density: '{L4_MC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_MC
+- density: '{L1_NGC-DA-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 1
+    mtype: L1_NGC-DA
+- density: '{L1_NGC-DA-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 1
+    mtype: L1_NGC-DA
+- density: '{L23_NBC-BIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bIR
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-BIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bIR
+    layer: 2
+    mtype: L23_NBC
+- density: '{L4_MC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 4
+    mtype: L4_MC
+- density: '{L4_MC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 4
+    mtype: L4_MC
+- density: '{L6_BP-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 6
+    mtype: L6_BP
+- density: '{L5_DBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 5
+    mtype: L5_DBC
+- density: '{L6_MC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 6
+    mtype: L6_MC
+- density: '{L23_LBC-DSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dSTUT
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-DSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dSTUT
+    layer: 2
+    mtype: L23_LBC
+- density: '{L5_BP-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 5
+    mtype: L5_BP
+- density: '{L4_SBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 4
+    mtype: L4_SBC
+- density: '{L6_LBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_LBC
+- density: '{L4_DBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 4
+    mtype: L4_DBC
+- density: '{L23_BP-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_BP
+- density: '{L23_BP-CAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cACint
+    layer: 2
+    mtype: L23_BP
+- density: '{L5_MC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 5
+    mtype: L5_MC
+- density: '{L5_LBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 5
+    mtype: L5_LBC
+- density: '{L4_MC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 4
+    mtype: L4_MC
+- density: '{L5_LBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 5
+    mtype: L5_LBC
+- density: '{L4_LBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_LBC
+- density: '{L23_BTC-BAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bAC
+    layer: 3
+    mtype: L23_BTC
+- density: '{L23_BTC-BAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bAC
+    layer: 2
+    mtype: L23_BTC
+- density: '{L6_LBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 6
+    mtype: L6_LBC
+- density: '{L23_SBC-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_SBC
+- density: '{L23_SBC-CAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cACint
+    layer: 2
+    mtype: L23_SBC
+- density: '{L6_BTC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_BTC
+- density: '{L5_BTC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 5
+    mtype: L5_BTC
+- density: '{L23_NBC-CSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cSTUT
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-CSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cSTUT
+    layer: 2
+    mtype: L23_NBC
+- density: '{L23_LBC-BAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bAC
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-BAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bAC
+    layer: 2
+    mtype: L23_LBC
+- density: '{L23_DBC-CNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cNAC
+    layer: 3
+    mtype: L23_DBC
+- density: '{L23_DBC-CNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cNAC
+    layer: 2
+    mtype: L23_DBC
+- density: '{L4_NBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 4
+    mtype: L4_NBC
+- density: '{L4_BP-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 4
+    mtype: L4_BP
+- density: '{L4_DBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 4
+    mtype: L4_DBC
+- density: '{L6_MC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 6
+    mtype: L6_MC
+- density: '{L4_NBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 4
+    mtype: L4_NBC
+- density: '{L5_DBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 5
+    mtype: L5_DBC
+- density: '{L5_NBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 5
+    mtype: L5_NBC
+- density: '{L23_CHC-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_CHC
+- density: '{L23_CHC-CAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cACint
+    layer: 2
+    mtype: L23_CHC
+- density: '{L1_DLAC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 1
+    mtype: L1_LAC
+- density: '{L23_NBC-CIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cIR
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-CIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cIR
+    layer: 2
+    mtype: L23_NBC
+- density: '{L5_CHC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 5
+    mtype: L5_CHC
+- density: '{L4_SBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_SBC
+- density: '{L23_LBC-CSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cSTUT
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-CSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cSTUT
+    layer: 2
+    mtype: L23_LBC
+- density: '{L4_MC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 4
+    mtype: L4_MC
+- density: '{L6_DBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 6
+    mtype: L6_DBC
+- density: '{L5_NBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_NBC
+- density: '{L6_MC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 6
+    mtype: L6_MC
+- density: '{L23_DBC-BIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bIR
+    layer: 3
+    mtype: L23_DBC
+- density: '{L23_DBC-BIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bIR
+    layer: 2
+    mtype: L23_DBC
+- density: '{L4_NGC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 4
+    mtype: L4_NGC
+- density: '{L6_BP-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_BP
+- density: '{L23_BTC-CNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cNAC
+    layer: 3
+    mtype: L23_BTC
+- density: '{L23_BTC-CNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cNAC
+    layer: 2
+    mtype: L23_BTC
+- density: '{L5_BTC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_BTC
+- density: '{L4_DBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 4
+    mtype: L4_DBC
+- density: '{L6_MC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 6
+    mtype: L6_MC
+- density: '{L4_NGC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 4
+    mtype: L4_NGC
+- density: '{L4_BTC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_BTC
+- density: '{L6_SBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_SBC
+- density: '{L4_LBC-DSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: dSTUT
+    layer: 4
+    mtype: L4_LBC
+- density: '{L6_DBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 6
+    mtype: L6_DBC
+- density: '{L1_NGC-DA-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 1
+    mtype: L1_NGC-DA
+- density: '{L5_DBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 5
+    mtype: L5_DBC
+- density: '{L6_NGC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_NGC
+- density: '{L6_LBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 6
+    mtype: L6_LBC
+- density: '{L5_MC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 5
+    mtype: L5_MC
+- density: '{L4_BTC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 4
+    mtype: L4_BTC
+- density: '{L23_MC-CSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cSTUT
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-CSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cSTUT
+    layer: 2
+    mtype: L23_MC
+- density: '{L6_BTC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 6
+    mtype: L6_BTC
+- density: '{L6_CHC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 6
+    mtype: L6_CHC
+- density: '{L5_NGC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 5
+    mtype: L5_NGC
+- density: '{L6_NBC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 6
+    mtype: L6_NBC
+- density: '{L1_NGC-DA-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 1
+    mtype: L1_NGC-DA
+- density: '{L5_NBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 5
+    mtype: L5_NBC
+- density: '{L5_NBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 5
+    mtype: L5_NBC
+- density: '{L5_MC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_MC
+- density: '{L23_NBC-BSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bSTUT
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-BSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bSTUT
+    layer: 2
+    mtype: L23_NBC
+- density: '{L23_DBC-BNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bNAC
+    layer: 3
+    mtype: L23_DBC
+- density: '{L23_DBC-BNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bNAC
+    layer: 2
+    mtype: L23_DBC
+- density: '{L4_MC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 4
+    mtype: L4_MC
+- density: '{L1_HAC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 1
+    mtype: L1_HAC
+- density: '{L4_BP-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_BP
+- density: '{L6_BP-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 6
+    mtype: L6_BP
+- density: '{L6_CHC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 6
+    mtype: L6_CHC
+- density: '{L23_BP-BIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bIR
+    layer: 3
+    mtype: L23_BP
+- density: '{L23_BP-BIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bIR
+    layer: 2
+    mtype: L23_BP
+- density: '{L1_SLAC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 1
+    mtype: L1_SAC
+- density: '{L5_LBC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 5
+    mtype: L5_LBC
+- density: '{L1_HAC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 1
+    mtype: L1_HAC
+- density: '{L23_BP-CNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cNAC
+    layer: 3
+    mtype: L23_BP
+- density: '{L23_BP-CNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cNAC
+    layer: 2
+    mtype: L23_BP
+- density: '{L23_NBC-DSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dSTUT
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-DSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dSTUT
+    layer: 2
+    mtype: L23_NBC
+- density: '{L23_DBC-BAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bAC
+    layer: 3
+    mtype: L23_DBC
+- density: '{L23_DBC-BAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bAC
+    layer: 2
+    mtype: L23_DBC
+- density: '{L5_DBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_DBC
+- density: '{L4_BP-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 4
+    mtype: L4_BP
+- density: '{L23_BTC-BSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bSTUT
+    layer: 3
+    mtype: L23_BTC
+- density: '{L23_BTC-BSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bSTUT
+    layer: 2
+    mtype: L23_BTC
+- density: '{L5_MC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 5
+    mtype: L5_MC
+- density: '{L23_NBC-CNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cNAC
+    layer: 3
+    mtype: L23_NBC
+- density: '{L23_NBC-CNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cNAC
+    layer: 2
+    mtype: L23_NBC
+- density: '{L6_CHC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 6
+    mtype: L6_CHC
+- density: '{L5_SBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_SBC
+- density: '{L4_CHC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_CHC
+- density: '{L23_MC-BAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bAC
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-BAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bAC
+    layer: 2
+    mtype: L23_MC
+- density: '{L4_DBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 4
+    mtype: L4_DBC
+- density: '{L4_BTC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 4
+    mtype: L4_BTC
+- density: '{L6_LBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 6
+    mtype: L6_LBC
+- density: '{L6_LBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 6
+    mtype: L6_LBC
+- density: '{L4_NBC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 4
+    mtype: L4_NBC
+- density: '{L23_BP-BNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bNAC
+    layer: 3
+    mtype: L23_BP
+- density: '{L23_BP-BNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bNAC
+    layer: 2
+    mtype: L23_BP
+- density: '{L23_DBC-CIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cIR
+    layer: 3
+    mtype: L23_DBC
+- density: '{L23_DBC-CIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cIR
+    layer: 2
+    mtype: L23_DBC
+- density: '{L5_NBC-DSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: dSTUT
+    layer: 5
+    mtype: L5_NBC
+- density: '{L5_NGC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 5
+    mtype: L5_NGC
+- density: '{L4_BP-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 4
+    mtype: L4_BP
+- density: '{L6_NBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 6
+    mtype: L6_NBC
+- density: '{L5_LBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 5
+    mtype: L5_LBC
+- density: '{L4_BP-DSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: dSTUT
+    layer: 4
+    mtype: L4_BP
+- density: '{L6_SBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 6
+    mtype: L6_SBC
+- density: '{L23_BP-DSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dSTUT
+    layer: 3
+    mtype: L23_BP
+- density: '{L23_BP-DSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dSTUT
+    layer: 2
+    mtype: L23_BP
+- density: '{L23_DBC-BSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bSTUT
+    layer: 3
+    mtype: L23_DBC
+- density: '{L23_DBC-BSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bSTUT
+    layer: 2
+    mtype: L23_DBC
+- density: '{L4_BP-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 4
+    mtype: L4_BP
+- density: '{L4_DBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 4
+    mtype: L4_DBC
+- density: '{L23_MC-BNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bNAC
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-BNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bNAC
+    layer: 2
+    mtype: L23_MC
+- density: '{L5_NGC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 5
+    mtype: L5_NGC
+- density: '{L4_DBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 4
+    mtype: L4_DBC
+- density: '{L5_CHC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 5
+    mtype: L5_CHC
+- density: '{L23_LBC-CAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cACint
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-CAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cACint
+    layer: 2
+    mtype: L23_LBC
+- density: '{L4_LBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 4
+    mtype: L4_LBC
+- density: '{L23_MC-BIR_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bIR
+    layer: 3
+    mtype: L23_MC
+- density: '{L23_MC-BIR_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bIR
+    layer: 2
+    mtype: L23_MC
+- density: '{L6_MC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 6
+    mtype: L6_MC
+- density: '{L1_HAC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 1
+    mtype: L1_HAC
+- density: '{L4_DBC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_DBC
+- density: '{L5_MC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 5
+    mtype: L5_MC
+- density: '{L23_LBC-DNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dNAC
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-DNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dNAC
+    layer: 2
+    mtype: L23_LBC
+- density: '{L5_LBC-DSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: dSTUT
+    layer: 5
+    mtype: L5_LBC
+- density: '{L6_DBC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 6
+    mtype: L6_DBC
+- density: '{L1_NGC-SA-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 1
+    mtype: L1_NGC-SA
+- density: '{L5_SBC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 5
+    mtype: L5_SBC
+- density: '{L5_DBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 5
+    mtype: L5_DBC
+- density: '{L4_SBC-DNAC_densities_v3}'
+  region: root
+  traits:
+    etype: dNAC
+    layer: 4
+    mtype: L4_SBC
+- density: '{L5_DBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 5
+    mtype: L5_DBC
+- density: '{L4_LBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 4
+    mtype: L4_LBC
+- density: '{L6_MC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 6
+    mtype: L6_MC
+- density: '{L23_CHC-DNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dNAC
+    layer: 3
+    mtype: L23_CHC
+- density: '{L23_CHC-DNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dNAC
+    layer: 2
+    mtype: L23_CHC
+- density: '{L4_NGC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 4
+    mtype: L4_NGC
+- density: '{L6_LBC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 6
+    mtype: L6_LBC
+- density: '{L23_SBC-DNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: dNAC
+    layer: 3
+    mtype: L23_SBC
+- density: '{L23_SBC-DNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: dNAC
+    layer: 2
+    mtype: L23_SBC
+- density: '{L5_BTC-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 5
+    mtype: L5_BTC
+- density: '{L4_LBC-BNAC_densities_v3}'
+  region: root
+  traits:
+    etype: bNAC
+    layer: 4
+    mtype: L4_LBC
+- density: '{L1_SLAC-CAC_densities_v3}'
+  region: root
+  traits:
+    etype: cACint
+    layer: 1
+    mtype: L1_SAC
+- density: '{L4_NBC-DSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: dSTUT
+    layer: 4
+    mtype: L4_NBC
+- density: '{L23_LBC-CNAC_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: cNAC
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-CNAC_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: cNAC
+    layer: 2
+    mtype: L23_LBC
+- density: '{L23_LBC-BSTUT_densities_v3}'
+  region: '@.*3$'
+  traits:
+    etype: bSTUT
+    layer: 3
+    mtype: L23_LBC
+- density: '{L23_LBC-BSTUT_densities_v3}'
+  region: '@.*2$'
+  traits:
+    etype: bSTUT
+    layer: 2
+    mtype: L23_LBC
+- density: '{L6_NGC-CSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: cSTUT
+    layer: 6
+    mtype: L6_NGC
+- density: '{L6_LBC-BSTUT_densities_v3}'
+  region: root
+  traits:
+    etype: bSTUT
+    layer: 6
+    mtype: L6_LBC
+- density: '{L5_LBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 5
+    mtype: L5_LBC
+- density: '{L6_NBC-BIR_densities_v3}'
+  region: root
+  traits:
+    etype: bIR
+    layer: 6
+    mtype: L6_NBC
+- density: '{L6_DBC-CNAC_densities_v3}'
+  region: root
+  traits:
+    etype: cNAC
+    layer: 6
+    mtype: L6_DBC
+- density: '{L6_NBC-CIR_densities_v3}'
+  region: root
+  traits:
+    etype: cIR
+    layer: 6
+    mtype: L6_NBC
+- density: '{L5_BP-BAC_densities_v3}'
+  region: root
+  traits:
+    etype: bAC
+    layer: 5
+    mtype: L5_BP
+version: v2

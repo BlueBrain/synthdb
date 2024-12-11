@@ -1,0 +1,9 @@
+version: v2.0
+neurons:
+- density: '{[cell_density]DGsg_GC}'
+  region: 'DG-sg'
+  traits:
+    layer: DG-sg
+    mtype: DGsg_GC
+    etype:
+      cNAC: 1

@@ -1,0 +1,43 @@
+CA1:
+  layers:
+  - SLM
+  - SR
+  - SP
+  - SO
+  names:
+    SLM: SLM
+    SR: SR
+    SP: SP
+    SO: SO
+  region_queries:
+    SLM: SLM
+    SR: SR
+    SP: SP
+    SO: SO
+  thicknesses:
+    SLM: 134
+    SR: 256
+    SP: 54
+    SO: 154
+  boundaries:
+    - mtypes:
+      - SP_PC
+      neurite_types:
+        - axon
+        - apical_dendrite
+        - basal_dendrite
+      params_section:
+        d_min: 1
+        d_max: 50
+      path: /gpfs/bbp.cscs.ch/project/proj112/entities/atlas/20211004_BioM/meshes/CA1.obj
+      mesh_type: spatial
+  directions:
+    - mtypes:
+      - SP_PC
+      neurite_types:
+        - axon
+      processes:
+        - secondary
+      params:
+        direction: [1, 0, 0]
+        strength: 2.0

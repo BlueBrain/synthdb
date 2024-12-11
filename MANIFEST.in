@@ -1,0 +1,7 @@
+global-exclude *.py[co] .DS_Store
+
+include synthdb/data/internal_db.sqlite
+include synthdb/synthesis_inputs/inputs/*.json
+include synthdb/synthesis_inputs/luigi_configs/*.cfg
+recursive-include synthdb/insitu_synthesis_inputs *
+recursive-include synthdb/morphology_releases/ *

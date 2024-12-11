@@ -1,0 +1,9 @@
+version: v2.0
+neurons:
+- density: '{[cell_density]CA1sp_PC}'
+  region: 'CA1sp'
+  traits:
+    layer: CA1sp
+    mtype: CA1sp_PC
+    etype:
+      cACpyr: 1

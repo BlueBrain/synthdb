@@ -1,0 +1,138 @@
+default:  # this will be applied on all mtypes if corresponding key is not present below
+    apical_dendrite:
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99
+    basal_dendrite:
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99
+
+L2_TPC:A:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L2_TPC:B:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L3_TPC:A:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L3_TPC:C:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L4_TPC:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L4_UPC:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L5_TPC:A:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L5_TPC:B:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L5_TPC:C:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+
+L5_UPC:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.1
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99
+
+L6_TPC:A:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L4
+            fraction: 0.1
+        extent_to_target:
+            layer: L4
+            fraction: 0.5
+        hard_limit_max:
+            layer: L4
+            fraction: 0.99
+
+L6_TPC:C:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L4
+            fraction: 0.1
+        extent_to_target:
+            layer: L4
+            fraction: 0.5
+        hard_limit_max:
+            layer: L4
+            fraction: 0.99
+
+L6_UPC:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L4
+            fraction: 0.1
+        extent_to_target:
+            layer: L4
+            fraction: 0.5
+        hard_limit_max:
+            layer: L4
+            fraction: 0.99

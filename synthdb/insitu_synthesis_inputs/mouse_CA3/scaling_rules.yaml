@@ -1,0 +1,18 @@
+default:  # this will be applied on all mtypes if corresponding key is not present below
+    apical_dendrite:
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99
+    basal_dendrite:
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99
+
+CA1sp_PC:
+    apical_dendrite:
+        hard_limit_min:
+            layer: L1
+            fraction: 0.99
+        extent_to_target:
+            layer: L1
+            fraction: 0.8
