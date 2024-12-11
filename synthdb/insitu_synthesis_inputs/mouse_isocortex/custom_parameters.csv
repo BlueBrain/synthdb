@@ -167,7 +167,7 @@ L2_IPC,grow_types[1],basal_dendrite
 L2_IPC,basal_dendrite.orientation.mode,apical_constraint
 L2_IPC,axon.orientation.mode,normal_pia_constraint
 L2_IPC,axon.orientation.values.direction.mean,3.1415
-L2_IPC,axon.orientation.values.direction.std,0.2
+L2_IPC,axon.orientation.values.direction.std,0.1
 L2_IPC,axon.targeting,0.2
 L2_IPC,axon.randomness,0.2
 L2_IPC,axon.step_size.norm.std,0.0
@@ -638,7 +638,7 @@ L6_HPC,axon.targeting,0.2
 L6_HPC,axon.randomness,0.2
 L6_HPC,axon.step_size.norm.std,0.0
 
-L6_IPC,basal_dendrite.randomness,0.26
+L6_iPC,basal_dendrite.randomness,0.26
 L6_IPC,apical_dendrite.branching_method,bio_oriented
 L6_IPC,apical_dendrite.has_apical_tuft,True
 L6_IPC,apical_dendrite.bias_length,0.4
@@ -648,7 +648,7 @@ L6_IPC,apical_dendrite.growth_method,tmd_gradient
 L6_IPC,apical_dendrite.randomness,0.26
 L6_IPC,apical_dendrite.orientation.mode,normal_pia_constraint
 L6_IPC,apical_dendrite.orientation.values.direction.mean,3.1415
-L6_IPC,apical_dendrite.orientation.values.direction.std,3.1415
+L6_IPC,apical_dendrite.orientation.values.direction.std,0.1
 L6_IPC,basal_dendrite.orientation.mode,apical_constraint
 L6_IPC,grow_types[0],apical_dendrite
 L6_IPC,grow_types[1],basal_dendrite
