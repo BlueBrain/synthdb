@@ -1,0 +1,23 @@
+version: v2.0
+neurons:
+- density: '{[cell_density]CA3sp_PC}'
+  region: 'CA3sp'
+  traits:
+    layer: CA3sp
+    mtype: CA3sp_PC
+    etype:
+      cACpyr: 1
+- density: '{[cell_density]CA3sp_PC:dorsal}'
+  region: 'CA3sp'
+  traits:
+    layer: CA3sp
+    mtype: CA3sp_PC:dorsal
+    etype:
+      cACpyr: 1
+- density: '{[cell_density]CA3sp_PC:ventral}'
+  region: 'CA3sp'
+  traits:
+    layer: CA3sp
+    mtype: CA3sp_PC:ventral
+    etype:
+      cACpyr: 1

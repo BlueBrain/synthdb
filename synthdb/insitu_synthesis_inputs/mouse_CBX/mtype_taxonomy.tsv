@@ -1,0 +1,6 @@
+mtype	mClass	sClass
+CBXmo_BC	INT	INH
+CBXmo_StC	INT	INH
+CBXpu_PuC	INT	INH
+CBXgr_GoC	INT	INH
+CBXgr_GrC	PYR	EXC

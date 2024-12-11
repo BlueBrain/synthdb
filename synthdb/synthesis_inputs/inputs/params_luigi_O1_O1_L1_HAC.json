@@ -1,0 +1,86 @@
+{
+    "O1": {
+        "L1_HAC": {
+            "apical_dendrite": {},
+            "axon": {
+                "branching_method": "bio_oriented",
+                "growth_method": "tmd",
+                "metric": "path_distances",
+                "modify": null,
+                "orientation": {
+                    "mode": "normal_pia_constraint",
+                    "values": {
+                        "direction": {
+                            "mean": 3.1415,
+                            "std": 1.0
+                        }
+                    }
+                },
+                "randomness": 0.2,
+                "step_size": {
+                    "norm": {
+                        "mean": 1.0,
+                        "std": 0.0
+                    }
+                },
+                "targeting": 0.2,
+                "tree_type": 2
+            },
+            "basal_dendrite": {
+                "branching_method": "bio_oriented",
+                "growth_method": "tmd",
+                "metric": "path_distances",
+                "modify": null,
+                "orientation": {
+                    "mode": "pia_constraint",
+                    "values": {
+                        "form": "flat",
+                        "params": []
+                    }
+                },
+                "randomness": 0.24,
+                "step_size": {
+                    "norm": {
+                        "mean": 1.0,
+                        "std": 0.0
+                    }
+                },
+                "targeting": 0.14,
+                "tree_type": 3
+            },
+            "context_constraints": {
+                "apical_dendrite": {
+                    "hard_limit_max": {
+                        "fraction": 0.99,
+                        "layer": 1
+                    }
+                },
+                "basal_dendrite": {
+                    "hard_limit_max": {
+                        "fraction": 0.99,
+                        "layer": 1
+                    }
+                }
+            },
+            "diameter_params": {
+                "method": "default",
+                "models": [
+                    "simpler"
+                ],
+                "neurite_types": [
+                    "basal_dendrite",
+                    "axon"
+                ]
+            },
+            "grow_types": [
+                "basal_dendrite",
+                "axon"
+            ],
+            "origin": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    }
+}

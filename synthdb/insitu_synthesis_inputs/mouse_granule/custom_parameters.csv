@@ -1,0 +1,4 @@
+mtype,entry,value
+Granule,basal_dendrite.orientation.mode,pia_constraint
+Granule,basal_dendrite.step_size.norm.mean,2.0
+Granule,basal_dendrite.step_size.norm.std,0.0

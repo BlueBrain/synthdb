@@ -1,0 +1,53 @@
+H:
+  layers:
+  - CBXmo
+  - CBXpu
+  - CBXgr
+  names:
+    CBXmo: CBXmo
+    CBXpu: CBXpu
+    CBXgr: CBXgr
+  region_queries:
+    CBXmo: CBXmo
+    CBXpu: CBXpu
+    CBXgr: CBXgr
+  thicknesses:
+    CBXmo: 150
+    CBXpu: 15
+    CBXgr: 200  # should be 130, just to shrink basals of golgi a bit
+  directions:
+    - mtypes:
+      - CBXgr_GoC
+      neurite_types:
+      - apical_dendrite
+      params:
+        direction: [0, 1, 0]
+        power : 1.5
+        mode: parallel
+    - mtypes:
+      - CBXgr_GoC
+      neurite_types:
+      - axon
+      params:
+        direction: [0, 1, 0]
+        power : 1.5
+        mode: perpendicular
+    - mtypes:
+      - CBXmo_BC
+      neurite_types:
+      - axon
+      params:
+        direction: [0, 1, 0]
+        power : 1.5
+        layers: [2]
+        mode: perpendicular
+  boundaries:
+    - mtypes:
+      - CBXgr_GoC_
+      neurite_types:
+        - basal_dendrite
+      params_section:
+        d_min: 5.0
+        d_max: 40.0
+        power: 0.5
+      path: boundary_mesh.obj

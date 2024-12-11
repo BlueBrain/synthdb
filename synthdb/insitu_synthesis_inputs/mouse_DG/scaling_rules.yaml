@@ -1,0 +1,5 @@
+default:  # this will be applied on all mtypes if corresponding key is not present below
+    basal_dendrite:
+        hard_limit_max:
+            layer: L1
+            fraction: 0.99

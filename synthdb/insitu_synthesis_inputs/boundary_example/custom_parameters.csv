@@ -1,0 +1,8 @@
+mtype,entry,value
+L1_open,basal_dendrite.orientation.mode,pia_constraint
+L1_hard,basal_dendrite.orientation.mode,pia_constraint
+L1_leaky,basal_dendrite.orientation.mode,pia_constraint
+L1_hard_trunk,basal_dendrite.orientation.mode,pia_constraint
+L1_attractive,basal_dendrite.orientation.mode,pia_constraint
+L1_left,basal_dendrite.orientation.mode,pia_constraint
+L1_down,basal_dendrite.orientation.mode,pia_constraint

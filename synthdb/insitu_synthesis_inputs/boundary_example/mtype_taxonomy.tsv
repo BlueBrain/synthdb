@@ -1,0 +1,8 @@
+mtype	mClass	sClass
+L1_open	INT	INH
+L1_hard	INT	INH
+L1_leaky	INT	INH
+L1_hard_trunk   INT	INH
+L1_attractive   INT	INH
+L1_left INT	INH
+L1_down INT	INH

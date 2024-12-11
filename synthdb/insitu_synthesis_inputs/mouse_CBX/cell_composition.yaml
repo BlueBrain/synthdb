@@ -1,0 +1,37 @@
+version: v2.0
+neurons:
+- density: '{[cell_density]BC}'
+  region: '@CBXmo'
+  traits:
+    etype:
+      bAC: 1.0
+    layer: CBXmo
+    mtype: CBXmo_BC
+- density: '{[cell_density]StC}'
+  region: '@CBXmo'
+  traits:
+    etype:
+      bAC: 1.0
+    layer: CBXmo
+    mtype: CBXmo_StC
+- density: 113000
+  region: '@CBXpu'
+  traits:
+    etype:
+      bAC: 1.0
+    layer: CBXpu
+    mtype: CBXpu_PuC
+- density: '{[cell_density]GoC}'
+  region: '@CBXgr'
+  traits:
+    etype:
+      bAC: 1.0
+    layer: CBXgr
+    mtype: CBXgr_GoC
+- density: '{[cell_density]GrC}'
+  region: '@CBXgr'
+  traits:
+    etype:
+      bAC: 1.0
+    layer: CBXgr
+    mtype: CBXgr_GrC

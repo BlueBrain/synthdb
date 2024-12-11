@@ -1,0 +1,31 @@
+DG:
+  layers:
+  - DG-po
+  - DG-sg
+  - DG-mo
+  names:
+    DG-po: DG-po
+    DG-sg: DG-sg
+    DG-mo: DG-mo
+  region_queries:
+    DG-po: DG-po
+    DG-sg: DG-sg
+    DG-mo: DG-mo
+  boundaries:
+    - mtypes:
+      - DGsg_GC
+      neurite_types:
+        - basal_dendrite
+      params_section:
+        d_min: 1
+        d_max: 50
+      path: DG_mesh.obj
+      mesh_type: spatial
+  directions:
+    - mtypes:
+      - DGsg_GC
+      neurite_types:
+        - basal_dendrite
+      params:
+        direction: [0, 1, 0]
+        power: 2.0

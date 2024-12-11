@@ -1,0 +1,6 @@
+mtype,entry,value
+DGsg_GC,basal_dendrite.targeting,0.16
+DGsg_GC,basal_dendrite.orientation.mode,pia_constraint
+DGsg_GC,axon.orientation.mode,normal_pia_constraint
+DGsg_GC,axon.orientation.values.direction.mean,0.0
+DGsg_GC,axon.orientation.values.direction.std,0.0
