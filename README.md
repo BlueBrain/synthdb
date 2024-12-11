@@ -1,6 +1,6 @@
 # SynthDB
 
-Small database to host synthesis-related files.
+Database to host synthesis-related files.
 
 The synthesis inputs stored in SynthDB are usually created by the ``synthesis-workflows`` package
 and are usually meant to be used by the ``region-grower`` package.
@@ -11,7 +11,7 @@ and are usually meant to be used by the ``region-grower`` package.
 Use pip to install this package:
 
 ```bash
-pip install  synthdb
+pip install synthdb
 ```
 
 For some operations (e.g. create, update or delete operations), this package should be installed in editable mode:
@@ -51,38 +51,11 @@ synthdb --help
 synthdb morphology-release --help
 synthdb synthesis-inputs --help
 ```
+### Standard usage to add new species/region entries
 
-### Morphology release command
-
-#### Show list of morphology releases
-```bash
-synthdb morphology-release list
-```
-
-#### Create a new morphology release
-```bash
-synthdb morphology-release create a_new_rat_release --gpfs-path rat_release
-```
-
-#### Check the new entry
-```bash
-synthdb morphology-release list
-```
-
-#### Check the auto-generated `pip list` of the new entry
-```bash
-synthdb morphology-release list --with-pip-list
-```
-
-#### Remove a morphology release
-```bash
-synthdb morphology-release remove a_new_rat_release
-```
-
-#### Check that the entry was removed
-```bash
-synthdb morphology-release list
-```
+First, one creates a new branch to work on, then creates a luigi.cfg file that points to this branch and to a valid morphology release.
+A simple copy editing of an existing on is advised. The command below 'create' can then be used to populate the database.
+Once the database is populated, one need to commit all the files to the branch and create a Pull Request on github to be merged.
 
 ### Synthesis inputs command
 
@@ -133,6 +106,39 @@ synthdb synthesis-inputs remove new_species new_region L6_TPC:A luigi_sscx
 ```bash
 synthdb synthesis-inputs rebuild --species rat --brain-region sscx --mtype L6_TPC:A --luigi-config luigi_sscx
 ```
+
+### Morphology release command (deprecated)
+
+#### Show list of morphology releases
+```bash
+synthdb morphology-release list
+```
+
+#### Create a new morphology release
+```bash
+synthdb morphology-release create a_new_rat_release --gpfs-path rat_release
+```
+
+#### Check the new entry
+```bash
+synthdb morphology-release list
+```
+
+#### Check the auto-generated `pip list` of the new entry
+```bash
+synthdb morphology-release list --with-pip-list
+```
+
+#### Remove a morphology release
+```bash
+synthdb morphology-release remove a_new_rat_release
+```
+
+#### Check that the entry was removed
+```bash
+synthdb morphology-release list
+```
+
 
 ## Funding & Acknowledgment
 
