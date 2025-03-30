@@ -1,0 +1,32 @@
+version: v2.0
+neurons:
+  - density: '{CP_MSN1|GEN_INH_densities}'
+    region: 'STRd'
+    traits:
+      layer: none
+      mtype: CP_MSN1
+      etype: gen
+  - density: '{CP_MSN2|GEN_INH_densities}'
+    region: 'STRd'
+    traits:
+      layer: none
+      mtype: CP_MSN2
+      etype: gen
+  - density: '{CP_FS|GEN_INH_densities}'
+    region: 'STRd'
+    traits:
+      layer: none
+      mtype: CP_FS
+      etype: gen
+  - density: '{CP_CTAN|GEN_INH_densities}'
+    region: 'STRd'
+    traits:
+      layer: none
+      mtype: CP_CTAN
+      etype: gen
+  - density: '{CP_LTS|GEN_INH_densities}'
+    region: 'STRd'
+    traits:
+      layer: none
+      mtype: CP_LTS
+      etype: gen
